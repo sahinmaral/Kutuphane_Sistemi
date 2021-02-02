@@ -1,0 +1,24 @@
+C:\Users\Şahin MARAL\Desktop\TOTAL_FILES\Testing_Area\Kutuphane_Sistemi\Kutuphane_Sistemi\bin\Debug\Kutuphane_Sistemi.exe.config
+C:\Users\Şahin MARAL\Desktop\TOTAL_FILES\Testing_Area\Kutuphane_Sistemi\Kutuphane_Sistemi\bin\Debug\Kutuphane_Sistemi.exe
+C:\Users\Şahin MARAL\Desktop\TOTAL_FILES\Testing_Area\Kutuphane_Sistemi\Kutuphane_Sistemi\bin\Debug\Kutuphane_Sistemi.pdb
+C:\Users\Şahin MARAL\Desktop\TOTAL_FILES\Testing_Area\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.Properties.Resources.resources
+C:\Users\Şahin MARAL\Desktop\TOTAL_FILES\Testing_Area\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.csproj.GenerateResource.cache
+C:\Users\Şahin MARAL\Desktop\TOTAL_FILES\Testing_Area\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.csproj.CoreCompileInputs.cache
+C:\Users\Şahin MARAL\Desktop\TOTAL_FILES\Testing_Area\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.exe
+C:\Users\Şahin MARAL\Desktop\TOTAL_FILES\Testing_Area\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.pdb
+C:\Users\Şahin MARAL\Desktop\TOTAL_FILES\Testing_Area\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.Mainpage.resources
+C:\Users\Şahin MARAL\Desktop\TOTAL_FILES\Testing_Area\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.Book_writer.resources
+C:\Users\Şahin MARAL\Desktop\TOTAL_FILES\Testing_Area\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.csprojAssemblyReference.cache
+C:\Users\Şahin MARAL\Desktop\TOTAL_FILES\Testing_Area\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.Login.resources
+C:\Users\sahin\Desktop\TOTAL_FILES\Testing_Area\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.csprojAssemblyReference.cache
+C:\Users\sahin\Desktop\TOTAL_FILES\Testing_Area\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.Book_Writer.resources
+C:\Users\sahin\Desktop\TOTAL_FILES\Testing_Area\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.Login.resources
+C:\Users\sahin\Desktop\TOTAL_FILES\Testing_Area\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.Properties.Resources.resources
+C:\Users\sahin\Desktop\TOTAL_FILES\Testing_Area\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.Mainpage.resources
+C:\Users\sahin\Desktop\TOTAL_FILES\Testing_Area\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.csproj.GenerateResource.cache
+C:\Users\sahin\Desktop\TOTAL_FILES\Testing_Area\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.csproj.CoreCompileInputs.cache
+C:\Users\sahin\Desktop\TOTAL_FILES\Testing_Area\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.exe
+C:\Users\sahin\Desktop\TOTAL_FILES\Testing_Area\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.pdb
+C:\Users\sahin\Desktop\TOTAL_FILES\Testing_Area\Kutuphane_Sistemi\Kutuphane_Sistemi\bin\Debug\Kutuphane_Sistemi.exe.config
+C:\Users\sahin\Desktop\TOTAL_FILES\Testing_Area\Kutuphane_Sistemi\Kutuphane_Sistemi\bin\Debug\Kutuphane_Sistemi.exe
+C:\Users\sahin\Desktop\TOTAL_FILES\Testing_Area\Kutuphane_Sistemi\Kutuphane_Sistemi\bin\Debug\Kutuphane_Sistemi.pdb
