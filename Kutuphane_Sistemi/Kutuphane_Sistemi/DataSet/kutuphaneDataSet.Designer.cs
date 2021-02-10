@@ -34,6 +34,8 @@ namespace Kutuphane_Sistemi.DataSet {
         
         private writerDataTable tablewriter;
         
+        private global::System.Data.DataRelation relationFK_book_student;
+        
         private global::System.Data.DataRelation relationFK_book_book;
         
         private global::System.Data.DataRelation relationFK_book_type;
@@ -296,6 +298,7 @@ namespace Kutuphane_Sistemi.DataSet {
                     this.tablewriter.InitVars();
                 }
             }
+            this.relationFK_book_student = this.Relations["FK_book_student"];
             this.relationFK_book_book = this.Relations["FK_book_book"];
             this.relationFK_book_type = this.Relations["FK_book_type"];
             this.relationFK_book_writer = this.Relations["FK_book_writer"];
@@ -319,6 +322,18 @@ namespace Kutuphane_Sistemi.DataSet {
             base.Tables.Add(this.tabletype);
             this.tablewriter = new writerDataTable();
             base.Tables.Add(this.tablewriter);
+            global::System.Data.ForeignKeyConstraint fkc;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_book_student", new global::System.Data.DataColumn[] {
+                        this.tablebook.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablestudent.book_idColumn});
+            this.tablestudent.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.Cascade;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            this.relationFK_book_student = new global::System.Data.DataRelation("FK_book_student", new global::System.Data.DataColumn[] {
+                        this.tablebook.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablestudent.book_idColumn}, false);
+            this.Relations.Add(this.relationFK_book_student);
             this.relationFK_book_book = new global::System.Data.DataRelation("FK_book_book", new global::System.Data.DataColumn[] {
                         this.tablestudent.idColumn}, new global::System.Data.DataColumn[] {
                         this.tablebook.st_idColumn}, false);
@@ -1145,7 +1160,7 @@ namespace Kutuphane_Sistemi.DataSet {
             
             private global::System.Data.DataColumn columncan_take;
             
-            private global::System.Data.DataColumn columntaken_book_isbn_no;
+            private global::System.Data.DataColumn columnbook_id;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1238,9 +1253,9 @@ namespace Kutuphane_Sistemi.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn taken_book_isbn_noColumn {
+            public global::System.Data.DataColumn book_idColumn {
                 get {
-                    return this.columntaken_book_isbn_no;
+                    return this.columnbook_id;
                 }
             }
             
@@ -1281,7 +1296,7 @@ namespace Kutuphane_Sistemi.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public studentRow AddstudentRow(string st_name, string st_surname, long st_tr_id, string gender, System.DateTime penalty_date, bool can_take, int taken_book_isbn_no) {
+            public studentRow AddstudentRow(string st_name, string st_surname, long st_tr_id, string gender, System.DateTime penalty_date, bool can_take, bookRow parentbookRowByFK_book_student) {
                 studentRow rowstudentRow = ((studentRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1291,7 +1306,10 @@ namespace Kutuphane_Sistemi.DataSet {
                         gender,
                         penalty_date,
                         can_take,
-                        taken_book_isbn_no};
+                        null};
+                if ((parentbookRowByFK_book_student != null)) {
+                    columnValuesArray[7] = parentbookRowByFK_book_student[0];
+                }
                 rowstudentRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowstudentRow);
                 return rowstudentRow;
@@ -1328,7 +1346,7 @@ namespace Kutuphane_Sistemi.DataSet {
                 this.columngender = base.Columns["gender"];
                 this.columnpenalty_date = base.Columns["penalty_date"];
                 this.columncan_take = base.Columns["can_take"];
-                this.columntaken_book_isbn_no = base.Columns["taken_book_isbn_no"];
+                this.columnbook_id = base.Columns["book_id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1348,8 +1366,8 @@ namespace Kutuphane_Sistemi.DataSet {
                 base.Columns.Add(this.columnpenalty_date);
                 this.columncan_take = new global::System.Data.DataColumn("can_take", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncan_take);
-                this.columntaken_book_isbn_no = new global::System.Data.DataColumn("taken_book_isbn_no", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntaken_book_isbn_no);
+                this.columnbook_id = new global::System.Data.DataColumn("book_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbook_id);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -2447,6 +2465,17 @@ namespace Kutuphane_Sistemi.DataSet {
             public void Setis_deliveredNull() {
                 this[this.tablebook.is_deliveredColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public studentRow[] GetstudentRows() {
+                if ((this.Table.ChildRelations["FK_book_student"] == null)) {
+                    return new studentRow[0];
+                }
+                else {
+                    return ((studentRow[])(base.GetChildRows(this.Table.ChildRelations["FK_book_student"])));
+                }
+            }
         }
         
         /// <summary>
@@ -2572,17 +2601,28 @@ namespace Kutuphane_Sistemi.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int taken_book_isbn_no {
+            public int book_id {
                 get {
                     try {
-                        return ((int)(this[this.tablestudent.taken_book_isbn_noColumn]));
+                        return ((int)(this[this.tablestudent.book_idColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'taken_book_isbn_no\' in table \'student\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'book_id\' in table \'student\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablestudent.taken_book_isbn_noColumn] = value;
+                    this[this.tablestudent.book_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bookRow bookRow {
+                get {
+                    return ((bookRow)(this.GetParentRow(this.Table.ParentRelations["FK_book_student"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_book_student"]);
                 }
             }
             
@@ -2660,14 +2700,14 @@ namespace Kutuphane_Sistemi.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Istaken_book_isbn_noNull() {
-                return this.IsNull(this.tablestudent.taken_book_isbn_noColumn);
+            public bool Isbook_idNull() {
+                return this.IsNull(this.tablestudent.book_idColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Settaken_book_isbn_noNull() {
-                this[this.tablestudent.taken_book_isbn_noColumn] = global::System.Convert.DBNull;
+            public void Setbook_idNull() {
+                this[this.tablestudent.book_idColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3460,12 +3500,17 @@ SELECT id, isbn_no, book_name, writer_no, type_no, page_amount, st_id, taken_dat
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT   id,isbn_no,book_name,writer_no,type_no,page_amount,st_id,taken_date,deli" +
                 "very_date,is_delivered\r\nFROM       book";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT   id,isbn_no,book_name,writer_no,type_no,page_amount,st_id,taken_date,deli" +
+                "very_date,is_delivered\r\nFROM       book";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3490,6 +3535,19 @@ SELECT id, isbn_no, book_name, writer_no, type_no, page_amount, st_id, taken_dat
             kutuphaneDataSet.bookDataTable dataTable = new kutuphaneDataSet.bookDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(kutuphaneDataSet.bookDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3651,11 +3709,11 @@ SELECT id, isbn_no, book_name, writer_no, type_no, page_amount, st_id, taken_dat
             tableMapping.ColumnMappings.Add("gender", "gender");
             tableMapping.ColumnMappings.Add("penalty_date", "penalty_date");
             tableMapping.ColumnMappings.Add("can_take", "can_take");
-            tableMapping.ColumnMappings.Add("taken_book_isbn_no", "taken_book_isbn_no");
+            tableMapping.ColumnMappings.Add("book_id", "book_id");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[student] WHERE (([id] = @Original_id) AND ((@IsNull_st_name = 1 AND [st_name] IS NULL) OR ([st_name] = @Original_st_name)) AND ((@IsNull_st_surname = 1 AND [st_surname] IS NULL) OR ([st_surname] = @Original_st_surname)) AND ((@IsNull_st_tr_id = 1 AND [st_tr_id] IS NULL) OR ([st_tr_id] = @Original_st_tr_id)) AND ((@IsNull_gender = 1 AND [gender] IS NULL) OR ([gender] = @Original_gender)) AND ((@IsNull_penalty_date = 1 AND [penalty_date] IS NULL) OR ([penalty_date] = @Original_penalty_date)) AND ((@IsNull_can_take = 1 AND [can_take] IS NULL) OR ([can_take] = @Original_can_take)) AND ((@IsNull_taken_book_isbn_no = 1 AND [taken_book_isbn_no] IS NULL) OR ([taken_book_isbn_no] = @Original_taken_book_isbn_no)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [student] WHERE (([id] = @Original_id) AND ((@IsNull_st_name = 1 AND [st_name] IS NULL) OR ([st_name] = @Original_st_name)) AND ((@IsNull_st_surname = 1 AND [st_surname] IS NULL) OR ([st_surname] = @Original_st_surname)) AND ((@IsNull_st_tr_id = 1 AND [st_tr_id] IS NULL) OR ([st_tr_id] = @Original_st_tr_id)) AND ((@IsNull_gender = 1 AND [gender] IS NULL) OR ([gender] = @Original_gender)) AND ((@IsNull_penalty_date = 1 AND [penalty_date] IS NULL) OR ([penalty_date] = @Original_penalty_date)) AND ((@IsNull_can_take = 1 AND [can_take] IS NULL) OR ([can_take] = @Original_can_take)) AND ((@IsNull_book_id = 1 AND [book_id] IS NULL) OR ([book_id] = @Original_book_id)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_st_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "st_name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -3667,37 +3725,37 @@ SELECT id, isbn_no, book_name, writer_no, type_no, page_amount, st_id, taken_dat
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_gender", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_gender", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_penalty_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "penalty_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_penalty_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "penalty_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_penalty_date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "penalty_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_can_take", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "can_take", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_can_take", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "can_take", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_taken_book_isbn_no", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "taken_book_isbn_no", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_taken_book_isbn_no", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "taken_book_isbn_no", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_book_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "book_id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_book_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "book_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[student] ([id], [st_name], [st_surname], [st_tr_id], [gender], [penalty_date], [can_take], [taken_book_isbn_no]) VALUES (@id, @st_name, @st_surname, @st_tr_id, @gender, @penalty_date, @can_take, @taken_book_isbn_no);
-SELECT id, st_name, st_surname, st_tr_id, gender, penalty_date, can_take, taken_book_isbn_no FROM student WHERE (id = @id)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [student] ([id], [st_name], [st_surname], [st_tr_id], [gender], [penalty_date], [can_take], [book_id]) VALUES (@id, @st_name, @st_surname, @st_tr_id, @gender, @penalty_date, @can_take, @book_id);
+SELECT id, st_name, st_surname, st_tr_id, gender, penalty_date, can_take, book_id FROM student WHERE (id = @id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@st_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "st_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@st_surname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "st_surname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@st_tr_id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "st_tr_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@gender", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@penalty_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "penalty_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@penalty_date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "penalty_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@can_take", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "can_take", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@taken_book_isbn_no", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "taken_book_isbn_no", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@book_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "book_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[student] SET [id] = @id, [st_name] = @st_name, [st_surname] = @st_surname, [st_tr_id] = @st_tr_id, [gender] = @gender, [penalty_date] = @penalty_date, [can_take] = @can_take, [taken_book_isbn_no] = @taken_book_isbn_no WHERE (([id] = @Original_id) AND ((@IsNull_st_name = 1 AND [st_name] IS NULL) OR ([st_name] = @Original_st_name)) AND ((@IsNull_st_surname = 1 AND [st_surname] IS NULL) OR ([st_surname] = @Original_st_surname)) AND ((@IsNull_st_tr_id = 1 AND [st_tr_id] IS NULL) OR ([st_tr_id] = @Original_st_tr_id)) AND ((@IsNull_gender = 1 AND [gender] IS NULL) OR ([gender] = @Original_gender)) AND ((@IsNull_penalty_date = 1 AND [penalty_date] IS NULL) OR ([penalty_date] = @Original_penalty_date)) AND ((@IsNull_can_take = 1 AND [can_take] IS NULL) OR ([can_take] = @Original_can_take)) AND ((@IsNull_taken_book_isbn_no = 1 AND [taken_book_isbn_no] IS NULL) OR ([taken_book_isbn_no] = @Original_taken_book_isbn_no)));
-SELECT id, st_name, st_surname, st_tr_id, gender, penalty_date, can_take, taken_book_isbn_no FROM student WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [student] SET [id] = @id, [st_name] = @st_name, [st_surname] = @st_surname, [st_tr_id] = @st_tr_id, [gender] = @gender, [penalty_date] = @penalty_date, [can_take] = @can_take, [book_id] = @book_id WHERE (([id] = @Original_id) AND ((@IsNull_st_name = 1 AND [st_name] IS NULL) OR ([st_name] = @Original_st_name)) AND ((@IsNull_st_surname = 1 AND [st_surname] IS NULL) OR ([st_surname] = @Original_st_surname)) AND ((@IsNull_st_tr_id = 1 AND [st_tr_id] IS NULL) OR ([st_tr_id] = @Original_st_tr_id)) AND ((@IsNull_gender = 1 AND [gender] IS NULL) OR ([gender] = @Original_gender)) AND ((@IsNull_penalty_date = 1 AND [penalty_date] IS NULL) OR ([penalty_date] = @Original_penalty_date)) AND ((@IsNull_can_take = 1 AND [can_take] IS NULL) OR ([can_take] = @Original_can_take)) AND ((@IsNull_book_id = 1 AND [book_id] IS NULL) OR ([book_id] = @Original_book_id)));
+SELECT id, st_name, st_surname, st_tr_id, gender, penalty_date, can_take, book_id FROM student WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@st_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "st_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@st_surname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "st_surname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@st_tr_id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "st_tr_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@gender", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@penalty_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "penalty_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@penalty_date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "penalty_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@can_take", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "can_take", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@taken_book_isbn_no", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "taken_book_isbn_no", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@book_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "book_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_st_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "st_name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_st_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "st_name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -3708,11 +3766,11 @@ SELECT id, st_name, st_surname, st_tr_id, gender, penalty_date, can_take, taken_
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_gender", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_gender", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_penalty_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "penalty_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_penalty_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "penalty_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_penalty_date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "penalty_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_can_take", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "can_take", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_can_take", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "can_take", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_taken_book_isbn_no", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "taken_book_isbn_no", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_taken_book_isbn_no", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "taken_book_isbn_no", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_book_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "book_id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_book_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "book_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3728,8 +3786,8 @@ SELECT id, st_name, st_surname, st_tr_id, gender, penalty_date, can_take, taken_
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id,st_name,st_surname,st_tr_id,gender,penalty_date,can_take,taken_book_isb" +
-                "n_no FROM dbo.student";
+            this._commandCollection[0].CommandText = "SELECT id, st_name, st_surname, st_tr_id, gender, penalty_date, can_take,book_id " +
+                "FROM student";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4416,15 +4474,6 @@ SELECT id, st_name, st_surname, st_tr_id, gender, penalty_date, can_take, taken_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(kutuphaneDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._studentTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.student.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._studentTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._typeTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.type.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -4443,21 +4492,30 @@ SELECT id, st_name, st_surname, st_tr_id, gender, penalty_date, can_take, taken_
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._adminTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.admin.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._adminTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._bookTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.book.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._bookTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._studentTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.student.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._studentTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._adminTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.admin.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._adminTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -4471,14 +4529,6 @@ SELECT id, st_name, st_surname, st_tr_id, gender, penalty_date, can_take, taken_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(kutuphaneDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._studentTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.student.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._studentTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._typeTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.type.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -4495,19 +4545,27 @@ SELECT id, st_name, st_surname, st_tr_id, gender, penalty_date, can_take, taken_
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._adminTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.admin.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._adminTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._bookTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.book.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._bookTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._studentTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.student.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._studentTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._adminTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.admin.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._adminTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -4521,19 +4579,27 @@ SELECT id, st_name, st_surname, st_tr_id, gender, penalty_date, can_take, taken_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(kutuphaneDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._bookTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.book.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._bookTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._adminTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.admin.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._adminTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._studentTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.student.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._studentTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._bookTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.book.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._bookTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -4550,14 +4616,6 @@ SELECT id, st_name, st_surname, st_tr_id, gender, penalty_date, can_take, taken_
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._typeTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._studentTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.student.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._studentTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

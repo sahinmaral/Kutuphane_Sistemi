@@ -1,5 +1,0 @@
-Yapılacaklar
-
--Cezai işlem tarihini güncelleme ve saat ekleme
--Öğrenci sorgulama kısmını daha kullanışlı ve öğrencinin bütün verilerini
- görüntüleyecek şekilde yapma

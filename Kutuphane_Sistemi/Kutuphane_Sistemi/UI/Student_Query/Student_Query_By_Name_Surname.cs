@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Kutuphane_Sistemi.Properties;
 
 namespace Kutuphane_Sistemi.UI.Student_Query
 {
@@ -21,20 +22,23 @@ namespace Kutuphane_Sistemi.UI.Student_Query
         public static string st_name;
         public static string st_surname;
         public static string st_tr_id;
+        public static string st_id;
 
 
-        SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=kutuphane;Integrated Security=True");
+        ConnectionClass shortcon = new ConnectionClass();
+        ConnectionClass join = new ConnectionClass();
 
         private void btn_scan_st_n_s_Click(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection(shortcon.address);
 
-            if(txt_student_n.Text=="" && txt_student_s.Text == "")
+            if (txt_student_n.Text=="" && txt_student_s.Text == "")
                 MessageBox.Show("Öğrencinin adını veya soyadını girmeniz gerekiyor.");
 
             else
             {
                 con.Open();
-                SqlCommand com = new SqlCommand("Select * from student where st_name LIKE '" + txt_student_n.Text + "%' AND st_surname LIKE '" + txt_student_s.Text + "%'", con);
+                SqlCommand com = new SqlCommand(join.student_join+" st_name LIKE '" + txt_student_n.Text + "%' AND st_surname LIKE '" + txt_student_s.Text + "%'", con);
 
                 SqlDataAdapter sqlDataAdap = new SqlDataAdapter(com);
 
@@ -55,23 +59,9 @@ namespace Kutuphane_Sistemi.UI.Student_Query
             txt_st_surname.Text = student_dgw.Rows[secilen].Cells[2].Value.ToString();
             txt_st_tr_id.Text = student_dgw.Rows[secilen].Cells[3].Value.ToString();
             txt_st_gender.Text = student_dgw.Rows[secilen].Cells[4].Value.ToString();         
-     
-
-            if (student_dgw.Rows[secilen].Cells[7].Value==DBNull.Value)
-                txt_st_book_isbn.Text = "Aldığı kitabı yok";
-            else
-                txt_st_book_isbn.Text = student_dgw.Rows[secilen].Cells[7].Value.ToString();
-
-            if (student_dgw.Rows[secilen].Cells[5].Value == DBNull.Value)
-                txt_st_penalty.Text = "Ceza almamış";
-            else
-                txt_st_penalty.Text = student_dgw.Rows[secilen].Cells[5].Value.ToString();
-
-            if (student_dgw.Rows[secilen].Cells[6].Value.ToString() == "True")
-                txt_can_take.Text = "Alabilir";
-
-            if (student_dgw.Rows[secilen].Cells[6].Value.ToString() == "False")
-                txt_can_take.Text = "Alamaz";
+            txt_st_penalty.Text = student_dgw.Rows[secilen].Cells[5].Value.ToString();
+            txt_can_take.Text = student_dgw.Rows[secilen].Cells[6].Value.ToString();
+            txt_book_name.Text = student_dgw.Rows[secilen].Cells[7].Value.ToString();
 
         }
 
@@ -80,6 +70,7 @@ namespace Kutuphane_Sistemi.UI.Student_Query
             st_name = txt_st_name.Text;
             st_surname = txt_st_surname.Text;
             st_tr_id = txt_st_tr_id.Text;
+            st_id = txt_st_id.Text;
 
         }
     }

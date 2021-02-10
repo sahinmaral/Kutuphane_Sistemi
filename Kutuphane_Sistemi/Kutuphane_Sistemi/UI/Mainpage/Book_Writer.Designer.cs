@@ -36,18 +36,6 @@
             this.lbl_writer_code = new System.Windows.Forms.Label();
             this.pnl_writer_info = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.book_dgw = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isbnnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.booknameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.writernoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typenoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pageamountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.takendateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deliverydateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isdeliveredDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kutuphaneDataSet = new Kutuphane_Sistemi.DataSet.kutuphaneDataSet();
             this.writer_dgw = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +46,8 @@
             this.txt_writer = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.grp_order_book = new System.Windows.Forms.GroupBox();
+            this.txt_book_isbn = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.btn_refresh = new System.Windows.Forms.Button();
             this.txt_student_s = new System.Windows.Forms.TextBox();
             this.txt_student_n = new System.Windows.Forms.TextBox();
@@ -65,20 +55,19 @@
             this.dt_now = new System.Windows.Forms.DateTimePicker();
             this.btn_delete_order_book = new System.Windows.Forms.Button();
             this.txt_book_name = new System.Windows.Forms.TextBox();
-            this.txt_student_no = new System.Windows.Forms.TextBox();
+            this.txt_student_tr_no = new System.Windows.Forms.TextBox();
             this.btn_order_book = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.writerTableAdapter = new Kutuphane_Sistemi.DataSet.kutuphaneDataSetTableAdapters.writerTableAdapter();
-            this.bookTableAdapter = new Kutuphane_Sistemi.DataSet.kutuphaneDataSetTableAdapters.bookTableAdapter();
+            this.book_dgw = new System.Windows.Forms.DataGridView();
             this.pnl_writer_info.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.book_dgw)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kutuphaneDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.writer_dgw)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.writerBindingSource)).BeginInit();
             this.grp_order_book.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.book_dgw)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_scan_writer_book
@@ -158,98 +147,6 @@
             this.label5.Size = new System.Drawing.Size(110, 20);
             this.label5.TabIndex = 21;
             this.label5.Text = "Yazarın kodu :";
-            // 
-            // book_dgw
-            // 
-            this.book_dgw.AutoGenerateColumns = false;
-            this.book_dgw.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.book_dgw.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.book_dgw.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.book_dgw.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn1,
-            this.isbnnoDataGridViewTextBoxColumn,
-            this.booknameDataGridViewTextBoxColumn,
-            this.writernoDataGridViewTextBoxColumn,
-            this.typenoDataGridViewTextBoxColumn,
-            this.pageamountDataGridViewTextBoxColumn,
-            this.stidDataGridViewTextBoxColumn,
-            this.takendateDataGridViewTextBoxColumn,
-            this.deliverydateDataGridViewTextBoxColumn,
-            this.isdeliveredDataGridViewCheckBoxColumn});
-            this.book_dgw.DataSource = this.bookBindingSource;
-            this.book_dgw.Location = new System.Drawing.Point(16, 400);
-            this.book_dgw.Name = "book_dgw";
-            this.book_dgw.RowHeadersWidth = 51;
-            this.book_dgw.Size = new System.Drawing.Size(1224, 424);
-            this.book_dgw.TabIndex = 34;
-            this.book_dgw.Visible = false;
-            this.book_dgw.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.book_dgw_CellDoubleClick);
-            // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // isbnnoDataGridViewTextBoxColumn
-            // 
-            this.isbnnoDataGridViewTextBoxColumn.DataPropertyName = "isbn_no";
-            this.isbnnoDataGridViewTextBoxColumn.HeaderText = "ISBN No";
-            this.isbnnoDataGridViewTextBoxColumn.Name = "isbnnoDataGridViewTextBoxColumn";
-            // 
-            // booknameDataGridViewTextBoxColumn
-            // 
-            this.booknameDataGridViewTextBoxColumn.DataPropertyName = "book_name";
-            this.booknameDataGridViewTextBoxColumn.HeaderText = "Kitap Adı";
-            this.booknameDataGridViewTextBoxColumn.Name = "booknameDataGridViewTextBoxColumn";
-            // 
-            // writernoDataGridViewTextBoxColumn
-            // 
-            this.writernoDataGridViewTextBoxColumn.DataPropertyName = "writer_no";
-            this.writernoDataGridViewTextBoxColumn.HeaderText = "Yazar No";
-            this.writernoDataGridViewTextBoxColumn.Name = "writernoDataGridViewTextBoxColumn";
-            // 
-            // typenoDataGridViewTextBoxColumn
-            // 
-            this.typenoDataGridViewTextBoxColumn.DataPropertyName = "type_no";
-            this.typenoDataGridViewTextBoxColumn.HeaderText = "Tür No";
-            this.typenoDataGridViewTextBoxColumn.Name = "typenoDataGridViewTextBoxColumn";
-            // 
-            // pageamountDataGridViewTextBoxColumn
-            // 
-            this.pageamountDataGridViewTextBoxColumn.DataPropertyName = "page_amount";
-            this.pageamountDataGridViewTextBoxColumn.HeaderText = "Sayfa Sayısı";
-            this.pageamountDataGridViewTextBoxColumn.Name = "pageamountDataGridViewTextBoxColumn";
-            // 
-            // stidDataGridViewTextBoxColumn
-            // 
-            this.stidDataGridViewTextBoxColumn.DataPropertyName = "st_id";
-            this.stidDataGridViewTextBoxColumn.HeaderText = "Öğrenci ID";
-            this.stidDataGridViewTextBoxColumn.Name = "stidDataGridViewTextBoxColumn";
-            // 
-            // takendateDataGridViewTextBoxColumn
-            // 
-            this.takendateDataGridViewTextBoxColumn.DataPropertyName = "taken_date";
-            this.takendateDataGridViewTextBoxColumn.HeaderText = "Alınan Tarih";
-            this.takendateDataGridViewTextBoxColumn.Name = "takendateDataGridViewTextBoxColumn";
-            // 
-            // deliverydateDataGridViewTextBoxColumn
-            // 
-            this.deliverydateDataGridViewTextBoxColumn.DataPropertyName = "delivery_date";
-            this.deliverydateDataGridViewTextBoxColumn.HeaderText = "Teslim Edilecek Tarih";
-            this.deliverydateDataGridViewTextBoxColumn.Name = "deliverydateDataGridViewTextBoxColumn";
-            // 
-            // isdeliveredDataGridViewCheckBoxColumn
-            // 
-            this.isdeliveredDataGridViewCheckBoxColumn.DataPropertyName = "is_delivered";
-            this.isdeliveredDataGridViewCheckBoxColumn.HeaderText = "Teslim Edildi Mi";
-            this.isdeliveredDataGridViewCheckBoxColumn.Name = "isdeliveredDataGridViewCheckBoxColumn";
-            // 
-            // bookBindingSource
-            // 
-            this.bookBindingSource.DataMember = "book";
-            this.bookBindingSource.DataSource = this.kutuphaneDataSet;
             // 
             // kutuphaneDataSet
             // 
@@ -333,6 +230,8 @@
             // grp_order_book
             // 
             this.grp_order_book.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.grp_order_book.Controls.Add(this.txt_book_isbn);
+            this.grp_order_book.Controls.Add(this.label8);
             this.grp_order_book.Controls.Add(this.btn_refresh);
             this.grp_order_book.Controls.Add(this.txt_student_s);
             this.grp_order_book.Controls.Add(this.txt_student_n);
@@ -340,7 +239,7 @@
             this.grp_order_book.Controls.Add(this.dt_now);
             this.grp_order_book.Controls.Add(this.btn_delete_order_book);
             this.grp_order_book.Controls.Add(this.txt_book_name);
-            this.grp_order_book.Controls.Add(this.txt_student_no);
+            this.grp_order_book.Controls.Add(this.txt_student_tr_no);
             this.grp_order_book.Controls.Add(this.btn_order_book);
             this.grp_order_book.Controls.Add(this.label4);
             this.grp_order_book.Controls.Add(this.label3);
@@ -351,6 +250,25 @@
             this.grp_order_book.TabIndex = 36;
             this.grp_order_book.TabStop = false;
             // 
+            // txt_book_isbn
+            // 
+            this.txt_book_isbn.Enabled = false;
+            this.txt_book_isbn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_book_isbn.Location = new System.Drawing.Point(204, 146);
+            this.txt_book_isbn.Name = "txt_book_isbn";
+            this.txt_book_isbn.Size = new System.Drawing.Size(278, 26);
+            this.txt_book_isbn.TabIndex = 66;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label8.Location = new System.Drawing.Point(99, 152);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(79, 20);
+            this.label8.TabIndex = 65;
+            this.label8.Text = "ISBN No :";
+            // 
             // btn_refresh
             // 
             this.btn_refresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
@@ -358,9 +276,9 @@
             this.btn_refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_refresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btn_refresh.Image = global::Kutuphane_Sistemi.Properties.Resources.refresh_30;
-            this.btn_refresh.Location = new System.Drawing.Point(28, 188);
+            this.btn_refresh.Location = new System.Drawing.Point(510, 182);
             this.btn_refresh.Name = "btn_refresh";
-            this.btn_refresh.Size = new System.Drawing.Size(30, 30);
+            this.btn_refresh.Size = new System.Drawing.Size(115, 30);
             this.btn_refresh.TabIndex = 64;
             this.btn_refresh.UseVisualStyleBackColor = false;
             this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
@@ -395,7 +313,7 @@
             // 
             this.dt_now.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dt_now.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dt_now.Location = new System.Drawing.Point(204, 145);
+            this.dt_now.Location = new System.Drawing.Point(204, 188);
             this.dt_now.Name = "dt_now";
             this.dt_now.Size = new System.Drawing.Size(278, 26);
             this.dt_now.TabIndex = 56;
@@ -405,9 +323,9 @@
             this.btn_delete_order_book.BackColor = System.Drawing.Color.Thistle;
             this.btn_delete_order_book.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delete_order_book.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_delete_order_book.Location = new System.Drawing.Point(510, 69);
+            this.btn_delete_order_book.Location = new System.Drawing.Point(510, 95);
             this.btn_delete_order_book.Name = "btn_delete_order_book";
-            this.btn_delete_order_book.Size = new System.Drawing.Size(115, 35);
+            this.btn_delete_order_book.Size = new System.Drawing.Size(115, 40);
             this.btn_delete_order_book.TabIndex = 59;
             this.btn_delete_order_book.Text = "Kitabı iade et";
             this.btn_delete_order_book.UseVisualStyleBackColor = false;
@@ -422,13 +340,13 @@
             this.txt_book_name.Size = new System.Drawing.Size(278, 26);
             this.txt_book_name.TabIndex = 55;
             // 
-            // txt_student_no
+            // txt_student_tr_no
             // 
-            this.txt_student_no.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txt_student_no.Location = new System.Drawing.Point(204, 57);
-            this.txt_student_no.Name = "txt_student_no";
-            this.txt_student_no.Size = new System.Drawing.Size(278, 26);
-            this.txt_student_no.TabIndex = 54;
+            this.txt_student_tr_no.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_student_tr_no.Location = new System.Drawing.Point(204, 57);
+            this.txt_student_tr_no.Name = "txt_student_tr_no";
+            this.txt_student_tr_no.Size = new System.Drawing.Size(278, 26);
+            this.txt_student_tr_no.TabIndex = 54;
             // 
             // btn_order_book
             // 
@@ -447,7 +365,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(73, 149);
+            this.label4.Location = new System.Drawing.Point(73, 192);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 20);
             this.label4.TabIndex = 62;
@@ -477,16 +395,25 @@
             // 
             this.writerTableAdapter.ClearBeforeFill = true;
             // 
-            // bookTableAdapter
+            // book_dgw
             // 
-            this.bookTableAdapter.ClearBeforeFill = true;
+            this.book_dgw.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.book_dgw.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.book_dgw.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.book_dgw.Location = new System.Drawing.Point(16, 402);
+            this.book_dgw.Name = "book_dgw";
+            this.book_dgw.RowHeadersWidth = 51;
+            this.book_dgw.Size = new System.Drawing.Size(1224, 424);
+            this.book_dgw.TabIndex = 34;
+            this.book_dgw.Visible = false;
+            this.book_dgw.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.book_dgw_CellDoubleClick);
             // 
             // Book_Writer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1252, 1100);
+            this.ClientSize = new System.Drawing.Size(1260, 1100);
             this.ControlBox = false;
             this.Controls.Add(this.grp_order_book);
             this.Controls.Add(this.btn_scan_writer_book);
@@ -501,13 +428,12 @@
             this.Text = "Book";
             this.pnl_writer_info.ResumeLayout(false);
             this.pnl_writer_info.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.book_dgw)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kutuphaneDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.writer_dgw)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.writerBindingSource)).EndInit();
             this.grp_order_book.ResumeLayout(false);
             this.grp_order_book.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.book_dgw)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -522,7 +448,6 @@
         private System.Windows.Forms.Label lbl_writer_code;
         private System.Windows.Forms.Panel pnl_writer_info;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView book_dgw;
         private System.Windows.Forms.DataGridView writer_dgw;
         private System.Windows.Forms.Button btn_scan_writer;
         private System.Windows.Forms.TextBox txt_writer;
@@ -534,7 +459,7 @@
         private System.Windows.Forms.DateTimePicker dt_now;
         private System.Windows.Forms.Button btn_delete_order_book;
         private System.Windows.Forms.TextBox txt_book_name;
-        private System.Windows.Forms.TextBox txt_student_no;
+        private System.Windows.Forms.TextBox txt_student_tr_no;
         private System.Windows.Forms.Button btn_order_book;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -546,17 +471,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn writernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn writersurnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btn_refresh;
-        private System.Windows.Forms.BindingSource bookBindingSource;
-        private DataSet.kutuphaneDataSetTableAdapters.bookTableAdapter bookTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn isbnnoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn booknameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn writernoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typenoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pageamountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn takendateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn deliverydateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isdeliveredDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridView book_dgw;
+        private System.Windows.Forms.TextBox txt_book_isbn;
+        private System.Windows.Forms.Label label8;
     }
 }

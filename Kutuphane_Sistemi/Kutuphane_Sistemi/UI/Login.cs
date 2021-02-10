@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kutuphane_Sistemi.Properties;
+using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -11,9 +12,13 @@ namespace Kutuphane_Sistemi.UI
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=kutuphane;Integrated Security=True");
+
+        ConnectionClass shortcon = new ConnectionClass();
+       
         private void btn_login_Click(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection(shortcon.address);
+
             con.Open();
             SqlCommand com = new SqlCommand("SELECT * FROM admin where username=@username and password=@password", con);
             com.Parameters.AddWithValue("@username", txt_username.Text);

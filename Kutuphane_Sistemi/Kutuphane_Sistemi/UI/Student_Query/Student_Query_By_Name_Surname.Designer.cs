@@ -29,25 +29,14 @@ namespace Kutuphane_Sistemi.UI.Student_Query
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.txt_student_s = new System.Windows.Forms.TextBox();
             this.txt_student_n = new System.Windows.Forms.TextBox();
             this.lbl_std_name = new System.Windows.Forms.Label();
             this.lbl_std_surname = new System.Windows.Forms.Label();
             this.btn_scan_st_n_s = new System.Windows.Forms.Button();
             this.student_dgw = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stsurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sttridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.penaltydateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantakeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.takenbookisbnnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kutuphaneDataSet = new Kutuphane_Sistemi.DataSet.kutuphaneDataSet();
             this.btn_print = new System.Windows.Forms.Button();
-            this.studentTableAdapter = new Kutuphane_Sistemi.DataSet.kutuphaneDataSetTableAdapters.studentTableAdapter();
             this.grp_check_info = new System.Windows.Forms.GroupBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
@@ -57,7 +46,7 @@ namespace Kutuphane_Sistemi.UI.Student_Query
             this.grp_info = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txt_st_book_isbn = new System.Windows.Forms.TextBox();
+            this.txt_book_name = new System.Windows.Forms.TextBox();
             this.txt_can_take = new System.Windows.Forms.TextBox();
             this.txt_st_penalty = new System.Windows.Forms.TextBox();
             this.txt_st_gender = new System.Windows.Forms.TextBox();
@@ -72,7 +61,6 @@ namespace Kutuphane_Sistemi.UI.Student_Query
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.student_dgw)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kutuphaneDataSet)).BeginInit();
             this.grp_check_info.SuspendLayout();
             this.grp_info.SuspendLayout();
@@ -129,78 +117,13 @@ namespace Kutuphane_Sistemi.UI.Student_Query
             // 
             // student_dgw
             // 
-            this.student_dgw.AutoGenerateColumns = false;
             this.student_dgw.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.student_dgw.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.student_dgw.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.stnameDataGridViewTextBoxColumn,
-            this.stsurnameDataGridViewTextBoxColumn,
-            this.sttridDataGridViewTextBoxColumn,
-            this.genderDataGridViewTextBoxColumn,
-            this.penaltydateDataGridViewTextBoxColumn,
-            this.cantakeDataGridViewCheckBoxColumn,
-            this.takenbookisbnnoDataGridViewTextBoxColumn});
-            this.student_dgw.DataSource = this.studentBindingSource;
             this.student_dgw.Location = new System.Drawing.Point(-1, 147);
             this.student_dgw.Name = "student_dgw";
             this.student_dgw.Size = new System.Drawing.Size(1002, 353);
             this.student_dgw.TabIndex = 71;
             this.student_dgw.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.student_dgw_CellDoubleClick);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // stnameDataGridViewTextBoxColumn
-            // 
-            this.stnameDataGridViewTextBoxColumn.DataPropertyName = "st_name";
-            this.stnameDataGridViewTextBoxColumn.HeaderText = "Öğrenci Adı";
-            this.stnameDataGridViewTextBoxColumn.Name = "stnameDataGridViewTextBoxColumn";
-            // 
-            // stsurnameDataGridViewTextBoxColumn
-            // 
-            this.stsurnameDataGridViewTextBoxColumn.DataPropertyName = "st_surname";
-            this.stsurnameDataGridViewTextBoxColumn.HeaderText = "Öğrenci Soyadı";
-            this.stsurnameDataGridViewTextBoxColumn.Name = "stsurnameDataGridViewTextBoxColumn";
-            // 
-            // sttridDataGridViewTextBoxColumn
-            // 
-            this.sttridDataGridViewTextBoxColumn.DataPropertyName = "st_tr_id";
-            this.sttridDataGridViewTextBoxColumn.HeaderText = "Öğrenci TC Kimlik No";
-            this.sttridDataGridViewTextBoxColumn.Name = "sttridDataGridViewTextBoxColumn";
-            // 
-            // genderDataGridViewTextBoxColumn
-            // 
-            this.genderDataGridViewTextBoxColumn.DataPropertyName = "gender";
-            this.genderDataGridViewTextBoxColumn.HeaderText = "Cinsiyet";
-            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
-            // 
-            // penaltydateDataGridViewTextBoxColumn
-            // 
-            this.penaltydateDataGridViewTextBoxColumn.DataPropertyName = "penalty_date";
-            this.penaltydateDataGridViewTextBoxColumn.HeaderText = "Varsa Cezasının Biteceği Tarih";
-            this.penaltydateDataGridViewTextBoxColumn.Name = "penaltydateDataGridViewTextBoxColumn";
-            // 
-            // cantakeDataGridViewCheckBoxColumn
-            // 
-            this.cantakeDataGridViewCheckBoxColumn.DataPropertyName = "can_take";
-            this.cantakeDataGridViewCheckBoxColumn.HeaderText = "Kitap Alabilir Mi";
-            this.cantakeDataGridViewCheckBoxColumn.Name = "cantakeDataGridViewCheckBoxColumn";
-            // 
-            // takenbookisbnnoDataGridViewTextBoxColumn
-            // 
-            this.takenbookisbnnoDataGridViewTextBoxColumn.DataPropertyName = "taken_book_isbn_no";
-            this.takenbookisbnnoDataGridViewTextBoxColumn.HeaderText = "Aldığı Kitabın ISBN Numarası";
-            this.takenbookisbnnoDataGridViewTextBoxColumn.Name = "takenbookisbnnoDataGridViewTextBoxColumn";
-            // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataMember = "student";
-            this.studentBindingSource.DataSource = this.kutuphaneDataSet;
             // 
             // kutuphaneDataSet
             // 
@@ -219,10 +142,6 @@ namespace Kutuphane_Sistemi.UI.Student_Query
             this.btn_print.Text = "Sayfalara yukarıdaki bilgileri götür";
             this.btn_print.UseVisualStyleBackColor = false;
             this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
-            // 
-            // studentTableAdapter
-            // 
-            this.studentTableAdapter.ClearBeforeFill = true;
             // 
             // grp_check_info
             // 
@@ -309,7 +228,7 @@ namespace Kutuphane_Sistemi.UI.Student_Query
             this.grp_info.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.grp_info.Controls.Add(this.label9);
             this.grp_info.Controls.Add(this.label6);
-            this.grp_info.Controls.Add(this.txt_st_book_isbn);
+            this.grp_info.Controls.Add(this.txt_book_name);
             this.grp_info.Controls.Add(this.txt_can_take);
             this.grp_info.Controls.Add(this.txt_st_penalty);
             this.grp_info.Controls.Add(this.txt_st_gender);
@@ -326,7 +245,7 @@ namespace Kutuphane_Sistemi.UI.Student_Query
             this.grp_info.Enabled = false;
             this.grp_info.Location = new System.Drawing.Point(-1, 530);
             this.grp_info.Name = "grp_info";
-            this.grp_info.Size = new System.Drawing.Size(865, 193);
+            this.grp_info.Size = new System.Drawing.Size(893, 193);
             this.grp_info.TabIndex = 79;
             this.grp_info.TabStop = false;
             // 
@@ -334,11 +253,11 @@ namespace Kutuphane_Sistemi.UI.Student_Query
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label9.Location = new System.Drawing.Point(416, 148);
+            this.label9.Location = new System.Drawing.Point(496, 151);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(220, 20);
+            this.label9.Size = new System.Drawing.Size(140, 20);
             this.label9.TabIndex = 98;
-            this.label9.Text = "Aldığı Kitabın ISBN Numarası :";
+            this.label9.Text = "Aldığı Kitabın İsmi :";
             // 
             // label6
             // 
@@ -350,20 +269,20 @@ namespace Kutuphane_Sistemi.UI.Student_Query
             this.label6.TabIndex = 97;
             this.label6.Text = "Kitap  Alabilir Mi :";
             // 
-            // txt_st_book_isbn
+            // txt_book_name
             // 
-            this.txt_st_book_isbn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txt_st_book_isbn.Location = new System.Drawing.Point(642, 145);
-            this.txt_st_book_isbn.Name = "txt_st_book_isbn";
-            this.txt_st_book_isbn.Size = new System.Drawing.Size(206, 26);
-            this.txt_st_book_isbn.TabIndex = 96;
+            this.txt_book_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_book_name.Location = new System.Drawing.Point(642, 145);
+            this.txt_book_name.Name = "txt_book_name";
+            this.txt_book_name.Size = new System.Drawing.Size(240, 26);
+            this.txt_book_name.TabIndex = 96;
             // 
             // txt_can_take
             // 
             this.txt_can_take.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txt_can_take.Location = new System.Drawing.Point(642, 98);
             this.txt_can_take.Name = "txt_can_take";
-            this.txt_can_take.Size = new System.Drawing.Size(206, 26);
+            this.txt_can_take.Size = new System.Drawing.Size(240, 26);
             this.txt_can_take.TabIndex = 95;
             // 
             // txt_st_penalty
@@ -371,7 +290,7 @@ namespace Kutuphane_Sistemi.UI.Student_Query
             this.txt_st_penalty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txt_st_penalty.Location = new System.Drawing.Point(642, 55);
             this.txt_st_penalty.Name = "txt_st_penalty";
-            this.txt_st_penalty.Size = new System.Drawing.Size(206, 26);
+            this.txt_st_penalty.Size = new System.Drawing.Size(240, 26);
             this.txt_st_penalty.TabIndex = 94;
             // 
             // txt_st_gender
@@ -379,7 +298,7 @@ namespace Kutuphane_Sistemi.UI.Student_Query
             this.txt_st_gender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txt_st_gender.Location = new System.Drawing.Point(642, 14);
             this.txt_st_gender.Name = "txt_st_gender";
-            this.txt_st_gender.Size = new System.Drawing.Size(206, 26);
+            this.txt_st_gender.Size = new System.Drawing.Size(240, 26);
             this.txt_st_gender.TabIndex = 93;
             // 
             // txt_st_tr_id
@@ -494,7 +413,6 @@ namespace Kutuphane_Sistemi.UI.Student_Query
             this.Name = "Student_Query_By_Name_Surname";
             this.Text = "Student_Query_By_Name_Surname";
             ((System.ComponentModel.ISupportInitialize)(this.student_dgw)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kutuphaneDataSet)).EndInit();
             this.grp_check_info.ResumeLayout(false);
             this.grp_check_info.PerformLayout();
@@ -515,16 +433,6 @@ namespace Kutuphane_Sistemi.UI.Student_Query
         private System.Windows.Forms.DataGridView student_dgw;
         private System.Windows.Forms.Button btn_print;
         private DataSet.kutuphaneDataSet kutuphaneDataSet;
-        private System.Windows.Forms.BindingSource studentBindingSource;
-        private DataSet.kutuphaneDataSetTableAdapters.studentTableAdapter studentTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stsurnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sttridDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn penaltydateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn cantakeDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn takenbookisbnnoDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox grp_check_info;
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.CheckBox checkBox3;
@@ -540,7 +448,7 @@ namespace Kutuphane_Sistemi.UI.Student_Query
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txt_st_book_isbn;
+        private System.Windows.Forms.TextBox txt_book_name;
         private System.Windows.Forms.TextBox txt_can_take;
         private System.Windows.Forms.TextBox txt_st_penalty;
         private System.Windows.Forms.TextBox txt_st_gender;
