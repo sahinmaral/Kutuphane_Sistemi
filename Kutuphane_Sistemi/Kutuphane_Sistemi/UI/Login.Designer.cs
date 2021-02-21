@@ -30,8 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_username = new System.Windows.Forms.TextBox();
-            this.txt_password = new System.Windows.Forms.TextBox();
+            this.TxtUsername = new System.Windows.Forms.TextBox();
+            this.TxtPassword = new System.Windows.Forms.TextBox();
             this.btn_login = new ePOSOne.btnProduct.Button_WOC();
             this.SuspendLayout();
             // 
@@ -57,22 +57,22 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Şifre : ";
             // 
-            // txt_username
+            // TxtUsername
             // 
-            this.txt_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txt_username.Location = new System.Drawing.Point(134, 19);
-            this.txt_username.Name = "txt_username";
-            this.txt_username.Size = new System.Drawing.Size(273, 26);
-            this.txt_username.TabIndex = 2;
+            this.TxtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtUsername.Location = new System.Drawing.Point(134, 19);
+            this.TxtUsername.Name = "TxtUsername";
+            this.TxtUsername.Size = new System.Drawing.Size(273, 26);
+            this.TxtUsername.TabIndex = 2;
             // 
-            // txt_password
+            // TxtPassword
             // 
-            this.txt_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txt_password.Location = new System.Drawing.Point(134, 97);
-            this.txt_password.Name = "txt_password";
-            this.txt_password.Size = new System.Drawing.Size(273, 26);
-            this.txt_password.TabIndex = 3;
-            this.txt_password.UseSystemPasswordChar = true;
+            this.TxtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtPassword.Location = new System.Drawing.Point(134, 97);
+            this.TxtPassword.Name = "TxtPassword";
+            this.TxtPassword.Size = new System.Drawing.Size(273, 26);
+            this.TxtPassword.TabIndex = 3;
+            this.TxtPassword.UseSystemPasswordChar = true;
             // 
             // btn_login
             // 
@@ -100,8 +100,8 @@
             this.BackColor = System.Drawing.Color.Purple;
             this.ClientSize = new System.Drawing.Size(429, 219);
             this.Controls.Add(this.btn_login);
-            this.Controls.Add(this.txt_password);
-            this.Controls.Add(this.txt_username);
+            this.Controls.Add(this.TxtPassword);
+            this.Controls.Add(this.TxtUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Login";
@@ -115,8 +115,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_username;
-        private System.Windows.Forms.TextBox txt_password;
+        private System.Windows.Forms.TextBox TxtUsername;
+        private System.Windows.Forms.TextBox TxtPassword;
         private ePOSOne.btnProduct.Button_WOC btn_login;
     }
 }

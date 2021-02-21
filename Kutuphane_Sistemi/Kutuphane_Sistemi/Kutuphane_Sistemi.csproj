@@ -47,28 +47,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSet\kutuphaneDataSet.cs">
-      <DependentUpon>kutuphaneDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Gadgets\Button_WOC.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DataSet\kutuphaneDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>kutuphaneDataSet.xsd</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\ConnectionClass.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="UI\Mainpage\Book_Writer.cs">
+    <Compile Include="UI\BookQuery\BookWriter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Mainpage\Book_Writer.Designer.cs">
-      <DependentUpon>Book_Writer.cs</DependentUpon>
+    <Compile Include="UI\BookQuery\BookWriter.Designer.cs">
+      <DependentUpon>BookWriter.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Login.cs">
       <SubType>Form</SubType>
@@ -84,49 +77,37 @@
     <Compile Include="UI\Mainpage\Mainpage.Designer.cs">
       <DependentUpon>Mainpage.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Student_Query\Student_Query_By_Name_Surname.cs">
+    <Compile Include="UI\StudentQuery\StudentQueryByNameSurname.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Student_Query\Student_Query_By_Name_Surname.Designer.cs">
-      <DependentUpon>Student_Query_By_Name_Surname.cs</DependentUpon>
+    <Compile Include="UI\StudentQuery\StudentQueryByNameSurname.Designer.cs">
+      <DependentUpon>StudentQueryByNameSurname.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Student_Query\Student_Query_Mainpage.cs">
+    <Compile Include="UI\Mainpage\StudentQueryMainpage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Student_Query\Student_Query_Mainpage.Designer.cs">
-      <DependentUpon>Student_Query_Mainpage.cs</DependentUpon>
+    <Compile Include="UI\Mainpage\StudentQueryMainpage.Designer.cs">
+      <DependentUpon>StudentQueryMainpage.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UI\Mainpage\Book_Writer.resx">
-      <DependentUpon>Book_Writer.cs</DependentUpon>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BookQuery\BookWriter.resx">
+      <DependentUpon>BookWriter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\Mainpage\Mainpage.resx">
       <DependentUpon>Mainpage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Student_Query\Student_Query_By_Name_Surname.resx">
-      <DependentUpon>Student_Query_By_Name_Surname.cs</DependentUpon>
+    <EmbeddedResource Include="UI\StudentQuery\StudentQueryByNameSurname.resx">
+      <DependentUpon>StudentQueryByNameSurname.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Student_Query\Student_Query_Mainpage.resx">
-      <DependentUpon>Student_Query_Mainpage.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Mainpage\StudentQueryMainpage.resx">
+      <DependentUpon>StudentQueryMainpage.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DataSet\kutuphaneDataSet.xsc">
-      <DependentUpon>kutuphaneDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet\kutuphaneDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>kutuphaneDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSet\kutuphaneDataSet.xss">
-      <DependentUpon>kutuphaneDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -146,7 +127,10 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures_Icons\refresh_30.png" />
+    <None Include="PicturesIcons\refresh.png" />
+    <Content Include="PicturesIcons\save.png" />
+    <Content Include="PicturesIcons\search.png" />
+    <Content Include="PicturesIcons\shutdown.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

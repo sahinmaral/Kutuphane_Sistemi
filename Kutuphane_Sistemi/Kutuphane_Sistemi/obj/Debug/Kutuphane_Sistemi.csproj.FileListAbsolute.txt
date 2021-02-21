@@ -62,3 +62,17 @@ C:\Users\sahin\Desktop\TOTAL_FILES\Project1_Kutuphane_Sistemi\Kutuphane_Sistemi\
 C:\Users\sahin\Desktop\TOTAL_FILES\Project1_Kutuphane_Sistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.csproj.CoreCompileInputs.cache
 C:\Users\sahin\Desktop\TOTAL_FILES\Project1_Kutuphane_Sistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.exe
 C:\Users\sahin\Desktop\TOTAL_FILES\Project1_Kutuphane_Sistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.pdb
+C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.csprojAssemblyReference.cache
+C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.Properties.Resources.resources
+C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.BookWriter.resources
+C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.Login.resources
+C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.Mainpage.resources
+C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.Student_Query.StudentQueryByNameSurname.resources
+C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.csproj.GenerateResource.cache
+C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.csproj.CoreCompileInputs.cache
+C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.exe
+C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.pdb
+C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\bin\Debug\Kutuphane_Sistemi.exe.config
+C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\bin\Debug\Kutuphane_Sistemi.exe
+C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\bin\Debug\Kutuphane_Sistemi.pdb
+C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.StudentQueryMainpage.resources

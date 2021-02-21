@@ -20,10 +20,10 @@ namespace Kutuphane_Sistemi.UI
 
         public void FormShow(Form form)
         {
-            mainpage_panel.Controls.Clear();
+            MainpagePanel.Controls.Clear();
             form.TopLevel = false;
             form.AutoScroll = true;
-            mainpage_panel.Controls.Add(form);
+            MainpagePanel.Controls.Add(form);
             form.Show();
         }
 
@@ -34,15 +34,15 @@ namespace Kutuphane_Sistemi.UI
 
         private void yazarınaGöreSorgulamaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormShow(new Book_Writer());
+            FormShow(new BookWriter());
         }
 
         private void öğrenciSorgulamaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormShow(new Student_Query_Mainpage());
+            FormShow(new StudentQueryMainpage());
         }
 
-        private void kapatToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ProgramıKapat_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

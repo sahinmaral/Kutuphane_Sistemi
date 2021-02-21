@@ -13,19 +13,19 @@ namespace Kutuphane_Sistemi.UI
             InitializeComponent();
         }
 
-        ConnectionClass shortcon = new ConnectionClass();
+        ConnectionClass Shortcon = new ConnectionClass();
        
         private void btn_login_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(shortcon.address);
+            SqlConnection DbConnection = new SqlConnection(Shortcon.Address);
 
-            con.Open();
-            SqlCommand com = new SqlCommand("SELECT * FROM admin where username=@username and password=@password", con);
-            com.Parameters.AddWithValue("@username", txt_username.Text);
-            com.Parameters.AddWithValue("@password", txt_password.Text);
+            DbConnection.Open();
+            SqlCommand sqlCommand = new SqlCommand("SELECT * FROM admin where username=@username and password=@password", DbConnection);
+            sqlCommand.Parameters.AddWithValue("@username", TxtUsername.Text);
+            sqlCommand.Parameters.AddWithValue("@password", TxtPassword.Text);
 
-            SqlDataReader read = com.ExecuteReader();
-            if (read.Read())
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            if (sqlDataReader.Read())
             {
                 MessageBox.Show("Hoşgeldiniz","Bilgilendirme Ekranı");
                 UI.Mainpage frm = new UI.Mainpage();
@@ -37,7 +37,7 @@ namespace Kutuphane_Sistemi.UI
                 MessageBox.Show("Kullanıcı adınızı veya şifrenizi kontrol ediniz", "Bilgilendirme Ekranı");
             }
 
-            con.Close();
+            DbConnection.Close();
         }
     }
 }

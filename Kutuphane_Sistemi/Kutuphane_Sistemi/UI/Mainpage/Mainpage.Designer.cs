@@ -28,42 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grp_writer = new System.Windows.Forms.GroupBox();
-            this.menu = new System.Windows.Forms.MenuStrip();
+            this.components = new System.ComponentModel.Container();
+            this.MenuForTabs = new System.Windows.Forms.MenuStrip();
             this.kitapSorgulamaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ismineGöreSorgulamaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yazarınaGöreSorgulamaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.türüneGöreSorgulamaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kodunaGöreSorgulamaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.öğrenciSorgulamaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.programToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kapatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mainpage_panel = new System.Windows.Forms.Panel();
-            this.menu.SuspendLayout();
+            this.MainpagePanel = new System.Windows.Forms.Panel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ProgramıKapat = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuForTabs.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // grp_writer
+            // MenuForTabs
             // 
-            this.grp_writer.Location = new System.Drawing.Point(3, 3);
-            this.grp_writer.Name = "grp_writer";
-            this.grp_writer.Size = new System.Drawing.Size(731, 707);
-            this.grp_writer.TabIndex = 7;
-            this.grp_writer.TabStop = false;
-            // 
-            // menu
-            // 
-            this.menu.BackColor = System.Drawing.Color.Thistle;
-            this.menu.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuForTabs.BackColor = System.Drawing.Color.Thistle;
+            this.MenuForTabs.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.MenuForTabs.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.kitapSorgulamaToolStripMenuItem,
-            this.öğrenciSorgulamaToolStripMenuItem,
-            this.programToolStripMenuItem});
-            this.menu.Location = new System.Drawing.Point(0, 0);
-            this.menu.Name = "menu";
-            this.menu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menu.Size = new System.Drawing.Size(1280, 28);
-            this.menu.TabIndex = 8;
-            this.menu.Text = "menuStrip1";
+            this.öğrenciSorgulamaToolStripMenuItem});
+            this.MenuForTabs.Location = new System.Drawing.Point(0, 0);
+            this.MenuForTabs.Name = "MenuForTabs";
+            this.MenuForTabs.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.MenuForTabs.Size = new System.Drawing.Size(1280, 28);
+            this.MenuForTabs.TabIndex = 8;
+            this.MenuForTabs.Text = "menuStrip1";
             // 
             // kitapSorgulamaToolStripMenuItem
             // 
@@ -117,31 +109,30 @@
             this.öğrenciSorgulamaToolStripMenuItem.Text = "Öğrenci sorgulama";
             this.öğrenciSorgulamaToolStripMenuItem.Click += new System.EventHandler(this.öğrenciSorgulamaToolStripMenuItem_Click);
             // 
-            // programToolStripMenuItem
+            // MainpagePanel
             // 
-            this.programToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.kapatToolStripMenuItem});
-            this.programToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.programToolStripMenuItem.Name = "programToolStripMenuItem";
-            this.programToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
-            this.programToolStripMenuItem.Text = "Program";
+            this.MainpagePanel.AutoScroll = true;
+            this.MainpagePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.MainpagePanel.ContextMenuStrip = this.contextMenuStrip1;
+            this.MainpagePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainpagePanel.Location = new System.Drawing.Point(0, 28);
+            this.MainpagePanel.Name = "MainpagePanel";
+            this.MainpagePanel.Size = new System.Drawing.Size(1280, 679);
+            this.MainpagePanel.TabIndex = 9;
             // 
-            // kapatToolStripMenuItem
+            // contextMenuStrip1
             // 
-            this.kapatToolStripMenuItem.Name = "kapatToolStripMenuItem";
-            this.kapatToolStripMenuItem.Size = new System.Drawing.Size(120, 24);
-            this.kapatToolStripMenuItem.Text = "Kapat";
-            this.kapatToolStripMenuItem.Click += new System.EventHandler(this.kapatToolStripMenuItem_Click);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ProgramıKapat});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(157, 26);
             // 
-            // mainpage_panel
+            // ProgramıKapat
             // 
-            this.mainpage_panel.AutoScroll = true;
-            this.mainpage_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.mainpage_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainpage_panel.Location = new System.Drawing.Point(0, 28);
-            this.mainpage_panel.Name = "mainpage_panel";
-            this.mainpage_panel.Size = new System.Drawing.Size(1280, 679);
-            this.mainpage_panel.TabIndex = 9;
+            this.ProgramıKapat.Name = "ProgramıKapat";
+            this.ProgramıKapat.Size = new System.Drawing.Size(156, 22);
+            this.ProgramıKapat.Text = "Programı Kapat";
+            this.ProgramıKapat.Click += new System.EventHandler(this.ProgramıKapat_Click);
             // 
             // Mainpage
             // 
@@ -150,32 +141,32 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Purple;
             this.ClientSize = new System.Drawing.Size(1280, 707);
-            this.Controls.Add(this.mainpage_panel);
-            this.Controls.Add(this.menu);
+            this.Controls.Add(this.MainpagePanel);
+            this.Controls.Add(this.MenuForTabs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.MainMenuStrip = this.menu;
+            this.MainMenuStrip = this.MenuForTabs;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Mainpage";
             this.Text = "Kütüphane Paneli";
-            this.menu.ResumeLayout(false);
-            this.menu.PerformLayout();
+            this.MenuForTabs.ResumeLayout(false);
+            this.MenuForTabs.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox grp_writer;
-        private System.Windows.Forms.MenuStrip menu;
+        private System.Windows.Forms.MenuStrip MenuForTabs;
         private System.Windows.Forms.ToolStripMenuItem kitapSorgulamaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ismineGöreSorgulamaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yazarınaGöreSorgulamaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem türüneGöreSorgulamaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kodunaGöreSorgulamaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem öğrenciSorgulamaToolStripMenuItem;
-        private System.Windows.Forms.Panel mainpage_panel;
-        private System.Windows.Forms.ToolStripMenuItem programToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kapatToolStripMenuItem;
+        private System.Windows.Forms.Panel MainpagePanel;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem ProgramıKapat;
     }
 }

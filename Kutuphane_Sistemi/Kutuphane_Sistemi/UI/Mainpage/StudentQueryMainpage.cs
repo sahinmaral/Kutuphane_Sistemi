@@ -12,9 +12,9 @@ using Kutuphane_Sistemi.UI.Student_Query;
 
 namespace Kutuphane_Sistemi.UI
 {
-    public partial class Student_Query_Mainpage : Form
+    public partial class StudentQueryMainpage : Form
     {
-        public Student_Query_Mainpage()
+        public StudentQueryMainpage()
         {
             InitializeComponent();
         }
@@ -29,56 +29,56 @@ namespace Kutuphane_Sistemi.UI
 
         public void FormShow(Form form)
         {
-            st_query_panel.Controls.Clear();
+            StudentQueryPanel.Controls.Clear();
             form.TopLevel = false;
             form.AutoScroll = true;
-            st_query_panel.Controls.Add(form);
+            StudentQueryPanel.Controls.Add(form);
             form.Show();
         }
 
         private void btn_student_n_s_MouseEnter(object sender, EventArgs e)
         {
-            btn_student_n_s.FlatAppearance.BorderSize = 1;
-            btn_student_n_s.FlatAppearance.BorderColor = Color.Red;
+            BtnScanByNameSurname.FlatAppearance.BorderSize = 1;
+            BtnScanByNameSurname.FlatAppearance.BorderColor = Color.Red;
         }
         private void btn_student_n_s_MouseLeave(object sender, EventArgs e)
         {
-            btn_student_n_s.FlatAppearance.BorderSize = 1;
-            btn_student_n_s.FlatAppearance.BorderColor = Color.Black;
+            BtnScanByNameSurname.FlatAppearance.BorderSize = 1;
+            BtnScanByNameSurname.FlatAppearance.BorderColor = Color.Black;
         }
         private void btn_tr_id_MouseEnter(object sender, EventArgs e)
         {
-            btn_tr_id.FlatAppearance.BorderSize = 1;
-            btn_tr_id.FlatAppearance.BorderColor = Color.Red;
+            BtnScanByTurkishId.FlatAppearance.BorderSize = 1;
+            BtnScanByTurkishId.FlatAppearance.BorderColor = Color.Red;
         }
         private void btn_tr_id_MouseLeave(object sender, EventArgs e)
         {
-            btn_tr_id.FlatAppearance.BorderSize = 1;
-            btn_tr_id.FlatAppearance.BorderColor = Color.Black;
+            BtnScanByTurkishId.FlatAppearance.BorderSize = 1;
+            BtnScanByTurkishId.FlatAppearance.BorderColor = Color.Black;
         }
         private void btn_penalty_MouseEnter(object sender, EventArgs e)
         {
-            btn_penalty.FlatAppearance.BorderSize = 1;
-            btn_penalty.FlatAppearance.BorderColor = Color.Red;
+            BtnScanByPenalty.FlatAppearance.BorderSize = 1;
+            BtnScanByPenalty.FlatAppearance.BorderColor = Color.Red;
         }
         private void btn_penalty_MouseLeave(object sender, EventArgs e)
         {
-            btn_penalty.FlatAppearance.BorderSize = 1;
-            btn_penalty.FlatAppearance.BorderColor = Color.Black;
+            BtnScanByPenalty.FlatAppearance.BorderSize = 1;
+            BtnScanByPenalty.FlatAppearance.BorderColor = Color.Black;
         }
         private void btn_book_MouseEnter(object sender, EventArgs e)
         {
-            btn_book.FlatAppearance.BorderSize = 1;
-            btn_book.FlatAppearance.BorderColor = Color.Red;
+            BtnScanByTakenBook.FlatAppearance.BorderSize = 1;
+            BtnScanByTakenBook.FlatAppearance.BorderColor = Color.Red;
         }
         private void btn_book_MouseLeave(object sender, EventArgs e)
         {
-            btn_book.FlatAppearance.BorderSize = 1;
-            btn_book.FlatAppearance.BorderColor = Color.Black;
+            BtnScanByTakenBook.FlatAppearance.BorderSize = 1;
+            BtnScanByTakenBook.FlatAppearance.BorderColor = Color.Black;
         }
         private void btn_student_n_s_Click(object sender, EventArgs e)
         {
-            FormShow(new Student_Query_By_Name_Surname());
+            FormShow(new StudentQueryByNameSurname());
         }
     }
 }
