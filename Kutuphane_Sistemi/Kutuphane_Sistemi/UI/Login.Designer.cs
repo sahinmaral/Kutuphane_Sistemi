@@ -104,7 +104,10 @@
             this.Controls.Add(this.TxtUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "İstanbul Kütüphanesi";
             this.ResumeLayout(false);
             this.PerformLayout();

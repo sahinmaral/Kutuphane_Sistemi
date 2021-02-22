@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.BtnScanWriterBook = new System.Windows.Forms.Button();
-            this.LblWriterSurname = new System.Windows.Forms.Label();
-            this.LblWriterName = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.LblWriterCode = new System.Windows.Forms.Label();
-            this.PnlWriterInfo = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.DgwWriter = new System.Windows.Forms.DataGridView();
             this.BtnScanWriter = new System.Windows.Forms.Button();
             this.TxTScanWriter = new System.Windows.Forms.TextBox();
@@ -55,7 +49,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.DgwBook = new System.Windows.Forms.DataGridView();
-            this.PnlWriterInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgwWriter)).BeginInit();
             this.GrpOrderBook.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgwBook)).BeginInit();
@@ -66,7 +59,7 @@
             this.BtnScanWriterBook.BackColor = System.Drawing.Color.Thistle;
             this.BtnScanWriterBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnScanWriterBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BtnScanWriterBook.Location = new System.Drawing.Point(362, 46);
+            this.BtnScanWriterBook.Location = new System.Drawing.Point(363, 45);
             this.BtnScanWriterBook.Name = "BtnScanWriterBook";
             this.BtnScanWriterBook.Size = new System.Drawing.Size(133, 29);
             this.BtnScanWriterBook.TabIndex = 2;
@@ -75,70 +68,6 @@
             this.BtnScanWriterBook.Visible = false;
             this.BtnScanWriterBook.Click += new System.EventHandler(this.BtnScanWriterBook_Click);
             // 
-            // LblWriterSurname
-            // 
-            this.LblWriterSurname.AutoSize = true;
-            this.LblWriterSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.LblWriterSurname.Location = new System.Drawing.Point(260, 7);
-            this.LblWriterSurname.Name = "LblWriterSurname";
-            this.LblWriterSurname.Size = new System.Drawing.Size(27, 20);
-            this.LblWriterSurname.TabIndex = 25;
-            this.LblWriterSurname.Text = "00";
-            // 
-            // LblWriterName
-            // 
-            this.LblWriterName.AutoSize = true;
-            this.LblWriterName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.LblWriterName.Location = new System.Drawing.Point(194, 7);
-            this.LblWriterName.Name = "LblWriterName";
-            this.LblWriterName.Size = new System.Drawing.Size(27, 20);
-            this.LblWriterName.TabIndex = 24;
-            this.LblWriterName.Text = "00";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(20, 7);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(158, 20);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Yazarın Adı , Soyadı :";
-            // 
-            // LblWriterCode
-            // 
-            this.LblWriterCode.AutoSize = true;
-            this.LblWriterCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.LblWriterCode.Location = new System.Drawing.Point(194, 36);
-            this.LblWriterCode.Name = "LblWriterCode";
-            this.LblWriterCode.Size = new System.Drawing.Size(27, 20);
-            this.LblWriterCode.TabIndex = 22;
-            this.LblWriterCode.Text = "00";
-            this.LblWriterCode.TextChanged += new System.EventHandler(this.LblWriterCode_TextChanged);
-            // 
-            // PnlWriterInfo
-            // 
-            this.PnlWriterInfo.Controls.Add(this.LblWriterSurname);
-            this.PnlWriterInfo.Controls.Add(this.LblWriterName);
-            this.PnlWriterInfo.Controls.Add(this.label6);
-            this.PnlWriterInfo.Controls.Add(this.LblWriterCode);
-            this.PnlWriterInfo.Controls.Add(this.label5);
-            this.PnlWriterInfo.Location = new System.Drawing.Point(686, 10);
-            this.PnlWriterInfo.Name = "PnlWriterInfo";
-            this.PnlWriterInfo.Size = new System.Drawing.Size(554, 65);
-            this.PnlWriterInfo.TabIndex = 35;
-            this.PnlWriterInfo.Visible = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(20, 36);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 20);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Yazarın kodu :";
-            // 
             // DgwWriter
             // 
             this.DgwWriter.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -146,6 +75,7 @@
             this.DgwWriter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgwWriter.Location = new System.Drawing.Point(16, 82);
             this.DgwWriter.Name = "DgwWriter";
+            this.DgwWriter.ReadOnly = true;
             this.DgwWriter.RowHeadersWidth = 51;
             this.DgwWriter.Size = new System.Drawing.Size(1224, 312);
             this.DgwWriter.TabIndex = 33;
@@ -157,7 +87,7 @@
             this.BtnScanWriter.BackColor = System.Drawing.Color.Thistle;
             this.BtnScanWriter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnScanWriter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BtnScanWriter.Location = new System.Drawing.Point(238, 46);
+            this.BtnScanWriter.Location = new System.Drawing.Point(239, 45);
             this.BtnScanWriter.Name = "BtnScanWriter";
             this.BtnScanWriter.Size = new System.Drawing.Size(102, 29);
             this.BtnScanWriter.TabIndex = 1;
@@ -168,7 +98,7 @@
             // TxTScanWriter
             // 
             this.TxTScanWriter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TxTScanWriter.Location = new System.Drawing.Point(238, 13);
+            this.TxTScanWriter.Location = new System.Drawing.Point(239, 12);
             this.TxTScanWriter.Name = "TxTScanWriter";
             this.TxTScanWriter.Size = new System.Drawing.Size(258, 26);
             this.TxTScanWriter.TabIndex = 0;
@@ -177,7 +107,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(13, 17);
+            this.label1.Location = new System.Drawing.Point(14, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(212, 20);
             this.label1.TabIndex = 22;
@@ -200,7 +130,7 @@
             this.GrpOrderBook.Controls.Add(this.label4);
             this.GrpOrderBook.Controls.Add(this.label3);
             this.GrpOrderBook.Controls.Add(this.label2);
-            this.GrpOrderBook.Location = new System.Drawing.Point(17, 841);
+            this.GrpOrderBook.Location = new System.Drawing.Point(16, 845);
             this.GrpOrderBook.Name = "GrpOrderBook";
             this.GrpOrderBook.Size = new System.Drawing.Size(646, 233);
             this.GrpOrderBook.TabIndex = 36;
@@ -268,6 +198,7 @@
             // DtNow
             // 
             this.DtNow.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.DtNow.Checked = false;
             this.DtNow.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.DtNow.Location = new System.Drawing.Point(204, 188);
             this.DtNow.Name = "DtNow";
@@ -354,6 +285,7 @@
             this.DgwBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgwBook.Location = new System.Drawing.Point(16, 402);
             this.DgwBook.Name = "DgwBook";
+            this.DgwBook.ReadOnly = true;
             this.DgwBook.RowHeadersWidth = 51;
             this.DgwBook.Size = new System.Drawing.Size(1224, 424);
             this.DgwBook.TabIndex = 34;
@@ -369,7 +301,6 @@
             this.ControlBox = false;
             this.Controls.Add(this.GrpOrderBook);
             this.Controls.Add(this.BtnScanWriterBook);
-            this.Controls.Add(this.PnlWriterInfo);
             this.Controls.Add(this.DgwBook);
             this.Controls.Add(this.DgwWriter);
             this.Controls.Add(this.BtnScanWriter);
@@ -378,8 +309,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BookWriter";
             this.Text = "Book";
-            this.PnlWriterInfo.ResumeLayout(false);
-            this.PnlWriterInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgwWriter)).EndInit();
             this.GrpOrderBook.ResumeLayout(false);
             this.GrpOrderBook.PerformLayout();
@@ -392,12 +321,6 @@
         #endregion
 
         private System.Windows.Forms.Button BtnScanWriterBook;
-        private System.Windows.Forms.Label LblWriterSurname;
-        private System.Windows.Forms.Label LblWriterName;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label LblWriterCode;
-        private System.Windows.Forms.Panel PnlWriterInfo;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView DgwWriter;
         private System.Windows.Forms.Button BtnScanWriter;
         private System.Windows.Forms.TextBox TxTScanWriter;

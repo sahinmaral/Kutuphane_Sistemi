@@ -76,3 +76,6 @@ C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_S
 C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\bin\Debug\Kutuphane_Sistemi.exe
 C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\bin\Debug\Kutuphane_Sistemi.pdb
 C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.StudentQueryMainpage.resources
+C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.StudentQuery.StudentQueryByTurkishId.resources
+C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.StudentQuery.StudentQueryByPenalty.resources
+C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.StudentQuery.StudentQueryByTakenBook.resources

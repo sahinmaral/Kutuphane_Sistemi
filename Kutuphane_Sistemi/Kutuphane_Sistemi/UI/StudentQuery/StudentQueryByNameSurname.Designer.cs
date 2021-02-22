@@ -29,7 +29,7 @@ namespace Kutuphane_Sistemi.UI.Student_Query
         /// </summary>
         private void InitializeComponent()
         {
-            this.TxtScanStudentSurName = new System.Windows.Forms.TextBox();
+            this.TxtScanStudentSurname = new System.Windows.Forms.TextBox();
             this.TxtScanStudentName = new System.Windows.Forms.TextBox();
             this.LblStudentName = new System.Windows.Forms.Label();
             this.LblStudentSurname = new System.Windows.Forms.Label();
@@ -64,13 +64,13 @@ namespace Kutuphane_Sistemi.UI.Student_Query
             this.GrpInfo.SuspendLayout();
             this.SuspendLayout();
             // 
-            // TxtScanStudentSurName
+            // TxtScanStudentSurname
             // 
-            this.TxtScanStudentSurName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TxtScanStudentSurName.Location = new System.Drawing.Point(219, 98);
-            this.TxtScanStudentSurName.Name = "TxtScanStudentSurName";
-            this.TxtScanStudentSurName.Size = new System.Drawing.Size(360, 26);
-            this.TxtScanStudentSurName.TabIndex = 65;
+            this.TxtScanStudentSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtScanStudentSurname.Location = new System.Drawing.Point(219, 98);
+            this.TxtScanStudentSurname.Name = "TxtScanStudentSurname";
+            this.TxtScanStudentSurname.Size = new System.Drawing.Size(360, 26);
+            this.TxtScanStudentSurname.TabIndex = 65;
             // 
             // TxtScanStudentName
             // 
@@ -119,6 +119,7 @@ namespace Kutuphane_Sistemi.UI.Student_Query
             this.DgwStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgwStudent.Location = new System.Drawing.Point(47, 155);
             this.DgwStudent.Name = "DgwStudent";
+            this.DgwStudent.ReadOnly = true;
             this.DgwStudent.Size = new System.Drawing.Size(975, 405);
             this.DgwStudent.TabIndex = 71;
             this.DgwStudent.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwStudent_CellDoubleClick);
@@ -399,12 +400,14 @@ namespace Kutuphane_Sistemi.UI.Student_Query
             this.Controls.Add(this.DgwStudent);
             this.Controls.Add(this.BtnScanStudent);
             this.Controls.Add(this.LblStudentSurname);
-            this.Controls.Add(this.TxtScanStudentSurName);
+            this.Controls.Add(this.TxtScanStudentSurname);
             this.Controls.Add(this.TxtScanStudentName);
             this.Controls.Add(this.LblStudentName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "StudentQueryByNameSurname";
-            this.Text = "Student_Query_By_Name_Surname";
+            this.Text = "StudentQueryByNameSurname";
             ((System.ComponentModel.ISupportInitialize)(this.DgwStudent)).EndInit();
             this.GrpCheckInfo.ResumeLayout(false);
             this.GrpCheckInfo.PerformLayout();
@@ -418,7 +421,7 @@ namespace Kutuphane_Sistemi.UI.Student_Query
         #endregion
 
         private System.Windows.Forms.TextBox TxtScanStudentName;
-        private System.Windows.Forms.TextBox TxtScanStudentSurName;
+        private System.Windows.Forms.TextBox TxtScanStudentSurname;
         private System.Windows.Forms.Label LblStudentName;
         private System.Windows.Forms.Label LblStudentSurname;
         private System.Windows.Forms.Button BtnScanStudent;

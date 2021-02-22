@@ -23,52 +23,45 @@ namespace Kutuphane_Sistemi.UI
         string Teslimedildimi;
         public bool Iade;
         string StudentId;
-
+        int WriterCode;
 
         private void BtnScanWriter_Click(object sender, EventArgs e)
         {
             SqlConnection DbConnection = new SqlConnection(Shortcon.Address);
             DgwWriter.Visible = true;
             DbConnection.Open();
+
             SqlCommand com = new SqlCommand(Query.WriterQuery + " writer_name LIKE '" + TxTScanWriter.Text + "%' ", DbConnection);
-
             SqlDataAdapter sqlDataAdap = new SqlDataAdapter(com);
-
             DataTable dtRecord = new DataTable();
+
             sqlDataAdap.Fill(dtRecord);
             DgwWriter.DataSource = dtRecord;
-
             DbConnection.Close();
+
+            if (WriterCode > 0)
+                DgwBook.DataSource = null;
+
         }
         private void BtnScanWriterBook_Click(object sender, EventArgs e)
         {
             SqlConnection DbConnection = new SqlConnection(Shortcon.Address);
             DgwBook.Visible = true;
             DbConnection.Open();
-            SqlCommand com = new SqlCommand(Join.BookJoin + " writer_no LIKE '" + LblWriterCode.Text + "%' ", DbConnection);
-
-
-
+            SqlCommand com = new SqlCommand(Join.BookJoin + " w.id="+ WriterCode + "", DbConnection);
 
             SqlDataAdapter sqlDataAdap = new SqlDataAdapter(com);
-
             DataTable dtRecord = new DataTable();
             sqlDataAdap.Fill(dtRecord);
             DgwBook.DataSource = dtRecord;
             DbConnection.Close();
         }
-
-        private void LblWriterCode_TextChanged(object sender, EventArgs e)
-        {
-            BtnScanWriterBook.Visible = true;
-        }
-
         private void DgwWriter_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int Secilen = DgwWriter.SelectedCells[0].RowIndex;
-            LblWriterCode.Text = DgwWriter.Rows[Secilen].Cells[0].Value.ToString();
-            LblWriterName.Text = DgwWriter.Rows[Secilen].Cells[1].Value.ToString();
-            LblWriterSurname.Text = DgwWriter.Rows[Secilen].Cells[2].Value.ToString();
+            WriterCode = (int)DgwWriter.Rows[Secilen].Cells[0].Value;
+            BtnScanWriterBook.Visible = true;
+
         }
 
         private void BtnRefresh_Click(object sender, EventArgs e)
@@ -163,7 +156,7 @@ namespace Kutuphane_Sistemi.UI
                     if ((Gun == 0 && Saat == 0 && Dakika == 0) || (Gun == 0 && Saat < 0) || (Gun == 0 && Saat == 0 && Dakika < 0))
                     {
                         DbConnection.Open();
-                        SqlCommand sqlCommandPenaltyDate = new SqlCommand("UPDATE student SET penalty_date=@penalty_date where st_tr_id=@st_tr_id", DbConnection);
+                        SqlCommand sqlCommandPenaltyDate = new SqlCommand("UPDATE student SET can_take=1 , penalty_date=@penalty_date where st_tr_id=@st_tr_id", DbConnection);
                         sqlCommandPenaltyDate.Parameters.AddWithValue("@penalty_date", DBNull.Value);
                         sqlCommandPenaltyDate.Parameters.AddWithValue("@st_tr_id", TxtStudentTurkishId.Text);
                         sqlCommandPenaltyDate.ExecuteNonQuery();
@@ -207,9 +200,12 @@ namespace Kutuphane_Sistemi.UI
 
         private void BtnDeleteOrderBook_Click(object sender, EventArgs e)
         {
-            SqlConnection DbConnection = new SqlConnection(Shortcon.Address);
-            DateTime TeslimTarihi = new DateTime();
+            int Control = 0;
 
+            SqlConnection DbConnection = new SqlConnection(Shortcon.Address);
+
+            DateTime TeslimTarihi = new DateTime();
+            
 
             if (TxtStudentName.Text == "" && TxtStudentSurname.Text == "")
                 MessageBox.Show("Kitabı iade etmek için öğrencinin adını ve soyadını yazmanız gerekir", "Bilgilendirme Ekranı");
@@ -232,6 +228,7 @@ namespace Kutuphane_Sistemi.UI
                 if (SqlDataReader.Read())
                 {
                     TeslimTarihi = Convert.ToDateTime(SqlDataReader[0]);
+
                 }
                 DbConnection.Close();
 
@@ -249,18 +246,22 @@ namespace Kutuphane_Sistemi.UI
                 DbConnection.Close();
 
 
+                TimeSpan Interval = DtNow.Value - TeslimTarihi;
+                Control = Interval.Days;
+                DateTime CezaIslem = DtNow.Value.AddDays(Control);
 
-                int CezaIslem = 0;
-
-                if (CezaIslem > 0)
+                if (Control > 0)
                 {
+
+
                     DbConnection.Open();
-                    SqlCommand sqlCommandUpdate = new SqlCommand("UPDATE student SET penalty_date=@penalty_date where id=@id", DbConnection);
+                    SqlCommand sqlCommandUpdate = new SqlCommand("UPDATE student SET can_take=0 , book_id=@book_id , penalty_date=@penalty_date where id=@id", DbConnection);
                     sqlCommandUpdate.Parameters.AddWithValue("@penalty_date", CezaIslem);
                     sqlCommandUpdate.Parameters.AddWithValue("@id", StudentId);
+                    sqlCommandUpdate.Parameters.AddWithValue("@book_id", DBNull.Value);
                     sqlCommandUpdate.ExecuteNonQuery();
                     DbConnection.Close();
-                    MessageBox.Show(TxTBookName.Text + " " + "kitabı iade edilmiştir fakat gecikmeden dolayı " + TxtStudentTurkishId.Text + "TC kimlik nolu öğrenci " + CezaIslem.ToString() + " gün ceza almıştır");
+                    MessageBox.Show(TxTBookName.Text + " " + "kitabı iade edilmiştir fakat gecikmeden dolayı " + TxtStudentTurkishId.Text + "TC kimlik nolu öğrenci " + Control.ToString() + " gün ceza almıştır");
                     this.Close();
                 }
 
@@ -275,11 +276,10 @@ namespace Kutuphane_Sistemi.UI
                     MessageBox.Show(TxTBookName.Text + " " + "kitabı iade edilmiştir");
                     this.Close();
                 }
-
-
-
-
             }
+
+
+
         }
     }
 }

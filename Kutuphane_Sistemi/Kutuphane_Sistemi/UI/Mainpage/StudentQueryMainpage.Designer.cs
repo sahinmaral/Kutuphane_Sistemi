@@ -71,6 +71,7 @@ namespace Kutuphane_Sistemi.UI
             this.BtnScanByTurkishId.TabIndex = 72;
             this.BtnScanByTurkishId.Text = "Öğrencinin TC kimlik numarasına göre";
             this.BtnScanByTurkishId.UseVisualStyleBackColor = false;
+            this.BtnScanByTurkishId.Click += new System.EventHandler(this.BtnScanByTurkishId_Click);
             this.BtnScanByTurkishId.MouseEnter += new System.EventHandler(this.btn_tr_id_MouseEnter);
             this.BtnScanByTurkishId.MouseLeave += new System.EventHandler(this.btn_tr_id_MouseLeave);
             // 
@@ -100,6 +101,7 @@ namespace Kutuphane_Sistemi.UI
             this.BtnScanByPenalty.TabIndex = 74;
             this.BtnScanByPenalty.Text = "Ceza Alan Öğrencilere Göre";
             this.BtnScanByPenalty.UseVisualStyleBackColor = false;
+            this.BtnScanByPenalty.Click += new System.EventHandler(this.BtnScanByPenalty_Click);
             this.BtnScanByPenalty.MouseEnter += new System.EventHandler(this.btn_penalty_MouseEnter);
             this.BtnScanByPenalty.MouseLeave += new System.EventHandler(this.btn_penalty_MouseLeave);
             // 
@@ -114,6 +116,7 @@ namespace Kutuphane_Sistemi.UI
             this.BtnScanByTakenBook.TabIndex = 75;
             this.BtnScanByTakenBook.Text = "Aldığı kitaba göre";
             this.BtnScanByTakenBook.UseVisualStyleBackColor = false;
+            this.BtnScanByTakenBook.Click += new System.EventHandler(this.BtnScanByTakenBook_Click);
             this.BtnScanByTakenBook.MouseEnter += new System.EventHandler(this.btn_book_MouseEnter);
             this.BtnScanByTakenBook.MouseLeave += new System.EventHandler(this.btn_book_MouseLeave);
             // 

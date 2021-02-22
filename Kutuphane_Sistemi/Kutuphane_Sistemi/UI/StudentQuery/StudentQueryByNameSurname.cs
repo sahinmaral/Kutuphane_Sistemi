@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.SqlClient;
+﻿using Kutuphane_Sistemi.Models;
 using Kutuphane_Sistemi.Properties;
-using Kutuphane_Sistemi.Models;
+using System;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Kutuphane_Sistemi.UI.Student_Query
 {
@@ -26,13 +20,13 @@ namespace Kutuphane_Sistemi.UI.Student_Query
         {
             SqlConnection DbConnection = new SqlConnection(Shortcon.Address);
 
-            if (TxtScanStudentName.Text == "" && TxtScanStudentSurName.Text == "")
+            if (TxtScanStudentName.Text == "" && TxtScanStudentSurname.Text == "")
                 MessageBox.Show("Öğrencinin adını veya soyadını girmeniz gerekiyor.");
 
             else
             {
                 DbConnection.Open();
-                SqlCommand sqlCommand = new SqlCommand(Join.StudentJoin + " st_name LIKE '" + TxtScanStudentName.Text + "%' AND st_surname LIKE '" + TxtScanStudentSurName.Text + "%'", DbConnection);
+                SqlCommand sqlCommand = new SqlCommand(Join.StudentJoin + " st_name LIKE '" + TxtScanStudentName.Text + "%' AND st_surname LIKE '" + TxtScanStudentSurname.Text + "%'", DbConnection);
 
                 SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCommand);
 

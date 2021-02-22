@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using Kutuphane_Sistemi.UI.Student_Query;
+using Kutuphane_Sistemi.UI.StudentQuery;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using Kutuphane_Sistemi.UI.Student_Query;
 
 namespace Kutuphane_Sistemi.UI
 {
@@ -79,6 +73,21 @@ namespace Kutuphane_Sistemi.UI
         private void btn_student_n_s_Click(object sender, EventArgs e)
         {
             FormShow(new StudentQueryByNameSurname());
+        }
+
+        private void BtnScanByTurkishId_Click(object sender, EventArgs e)
+        {
+            FormShow(new StudentQueryByTurkishId());
+        }
+
+        private void BtnScanByPenalty_Click(object sender, EventArgs e)
+        {
+            FormShow(new StudentQueryByPenalty());
+        }
+
+        private void BtnScanByTakenBook_Click(object sender, EventArgs e)
+        {
+            FormShow(new StudentQueryByTakenBook());
         }
     }
 }
