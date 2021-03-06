@@ -2,6 +2,7 @@
 using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 
 
 namespace Kutuphane_Sistemi.UI
@@ -20,22 +21,33 @@ namespace Kutuphane_Sistemi.UI
             SqlConnection DbConnection = new SqlConnection(Shortcon.Address);
 
             DbConnection.Open();
-            SqlCommand sqlCommand = new SqlCommand("SELECT * FROM admin where username=@username and password=@password", DbConnection);
-            sqlCommand.Parameters.AddWithValue("@username", TxtUsername.Text);
-            sqlCommand.Parameters.AddWithValue("@password", TxtPassword.Text);
+            SqlCommand sqlCommand = new SqlCommand("CHECKADMIN", DbConnection);
+            sqlCommand.Parameters.AddWithValue("@USERNAME", TxtUsername.Text);
+            sqlCommand.Parameters.AddWithValue("@PASSWORD", TxtPassword.Text);         
+            sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+            try
+            {
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                if (sqlDataReader.Read())
+                {
+                    XtraMessageBox.Show("Hoşgeldiniz", "Bilgilendirme Ekranı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Mainpage frm = new Mainpage();
+                    frm.Show();
+                    this.Hide();
+                }
 
-            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-            if (sqlDataReader.Read())
-            {
-                MessageBox.Show("Hoşgeldiniz","Bilgilendirme Ekranı");
-                UI.Mainpage frm = new UI.Mainpage();
-                frm.Show();
-                this.Hide();
+                else
+                {
+                    XtraMessageBox.Show("Kullanıcı adınızı veya şifrenizi kontrol ediniz", "Bilgilendirme Ekranı",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Kullanıcı adınızı veya şifrenizi kontrol ediniz", "Bilgilendirme Ekranı");
+                XtraMessageBox.Show(ex.Message,"Bilgilendirme Ekranı", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+            
+            
 
             DbConnection.Close();
         }

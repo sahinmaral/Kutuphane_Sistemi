@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtUsername = new System.Windows.Forms.TextBox();
             this.TxtPassword = new System.Windows.Forms.TextBox();
-            this.btn_login = new ePOSOne.btnProduct.Button_WOC();
+            this.BtnLogin = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // label1
@@ -74,24 +75,19 @@
             this.TxtPassword.TabIndex = 3;
             this.TxtPassword.UseSystemPasswordChar = true;
             // 
-            // btn_login
+            // BtnLogin
             // 
-            this.btn_login.BorderColor = System.Drawing.Color.Red;
-            this.btn_login.ButtonColor = System.Drawing.Color.Red;
-            this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_login.ForeColor = System.Drawing.Color.Purple;
-            this.btn_login.Location = new System.Drawing.Point(248, 164);
-            this.btn_login.Name = "btn_login";
-            this.btn_login.OnHoverBorderColor = System.Drawing.Color.Gray;
-            this.btn_login.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            this.btn_login.OnHoverTextColor = System.Drawing.Color.Gray;
-            this.btn_login.Size = new System.Drawing.Size(159, 43);
-            this.btn_login.TabIndex = 4;
-            this.btn_login.Text = "Giriş yap";
-            this.btn_login.TextColor = System.Drawing.Color.White;
-            this.btn_login.UseVisualStyleBackColor = true;
-            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
+            this.BtnLogin.Appearance.BackColor = System.Drawing.Color.Red;
+            this.BtnLogin.Appearance.BackColor2 = System.Drawing.Color.White;
+            this.BtnLogin.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.BtnLogin.Appearance.Options.UseBackColor = true;
+            this.BtnLogin.Appearance.Options.UseFont = true;
+            this.BtnLogin.ImageOptions.Image = global::Kutuphane_Sistemi.Properties.Resources.login;
+            this.BtnLogin.Location = new System.Drawing.Point(280, 164);
+            this.BtnLogin.Name = "BtnLogin";
+            this.BtnLogin.Size = new System.Drawing.Size(127, 43);
+            this.BtnLogin.TabIndex = 6;
+            this.BtnLogin.Text = "Giriş yap";
             // 
             // Login
             // 
@@ -99,11 +95,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Purple;
             this.ClientSize = new System.Drawing.Size(429, 219);
-            this.Controls.Add(this.btn_login);
+            this.Controls.Add(this.BtnLogin);
             this.Controls.Add(this.TxtPassword);
             this.Controls.Add(this.TxtUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Login";
@@ -120,7 +117,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TxtUsername;
         private System.Windows.Forms.TextBox TxtPassword;
-        private ePOSOne.btnProduct.Button_WOC btn_login;
+        private DevExpress.XtraEditors.SimpleButton BtnLogin;
     }
 }
 
