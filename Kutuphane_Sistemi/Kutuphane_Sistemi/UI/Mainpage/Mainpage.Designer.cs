@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mainpage));
             this.MenuForTabs = new System.Windows.Forms.MenuStrip();
             this.kitapSorgulamaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ismineGöreSorgulamaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -144,6 +145,7 @@
             this.Controls.Add(this.MainpagePanel);
             this.Controls.Add(this.MenuForTabs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.MenuForTabs;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

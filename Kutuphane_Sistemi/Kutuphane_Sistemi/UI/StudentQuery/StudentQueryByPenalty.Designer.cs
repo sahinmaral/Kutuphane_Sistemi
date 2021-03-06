@@ -29,6 +29,7 @@ namespace Kutuphane_Sistemi.UI.StudentQuery
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentQueryByPenalty));
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.TxtTakenBookName = new System.Windows.Forms.TextBox();
@@ -52,13 +53,15 @@ namespace Kutuphane_Sistemi.UI.StudentQuery
             this.label1 = new System.Windows.Forms.Label();
             this.GrpInfo = new System.Windows.Forms.GroupBox();
             this.GrpCheckInfo = new System.Windows.Forms.GroupBox();
-            this.BtnPrint = new System.Windows.Forms.Button();
-            this.DgwStudent = new System.Windows.Forms.DataGridView();
-            this.BtnScanStudent = new System.Windows.Forms.Button();
-            this.BtnScanStudent2 = new System.Windows.Forms.Button();
+            this.StudentGridControl = new DevExpress.XtraGrid.GridControl();
+            this.StudentGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.BtnPrint = new DevExpress.XtraEditors.SimpleButton();
+            this.TxtStudentWithPenalty = new DevExpress.XtraEditors.SimpleButton();
+            this.TxtStudentWithoutPenalty = new DevExpress.XtraEditors.SimpleButton();
             this.GrpInfo.SuspendLayout();
             this.GrpCheckInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgwStudent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StudentGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StudentGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -273,7 +276,7 @@ namespace Kutuphane_Sistemi.UI.StudentQuery
             // 
             // GrpInfo
             // 
-            this.GrpInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.GrpInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.GrpInfo.Controls.Add(this.label9);
             this.GrpInfo.Controls.Add(this.label6);
             this.GrpInfo.Controls.Add(this.TxtTakenBookName);
@@ -299,7 +302,7 @@ namespace Kutuphane_Sistemi.UI.StudentQuery
             // 
             // GrpCheckInfo
             // 
-            this.GrpCheckInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.GrpCheckInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.GrpCheckInfo.Controls.Add(this.checkBox4);
             this.GrpCheckInfo.Controls.Add(this.checkBox3);
             this.GrpCheckInfo.Controls.Add(this.checkBox2);
@@ -311,55 +314,66 @@ namespace Kutuphane_Sistemi.UI.StudentQuery
             this.GrpCheckInfo.TabIndex = 87;
             this.GrpCheckInfo.TabStop = false;
             // 
+            // StudentGridControl
+            // 
+            this.StudentGridControl.Location = new System.Drawing.Point(52, 141);
+            this.StudentGridControl.MainView = this.StudentGridView;
+            this.StudentGridControl.Name = "StudentGridControl";
+            this.StudentGridControl.Size = new System.Drawing.Size(976, 416);
+            this.StudentGridControl.TabIndex = 90;
+            this.StudentGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.StudentGridView});
+            // 
+            // StudentGridView
+            // 
+            this.StudentGridView.GridControl = this.StudentGridControl;
+            this.StudentGridView.Name = "StudentGridView";
+            this.StudentGridView.OptionsBehavior.ReadOnly = true;
+            this.StudentGridView.OptionsView.ShowGroupPanel = false;
+            this.StudentGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.StudentGridView_FocusedRowChanged);
+            // 
             // BtnPrint
             // 
-            this.BtnPrint.BackColor = System.Drawing.Color.Thistle;
-            this.BtnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BtnPrint.Location = new System.Drawing.Point(944, 586);
+            this.BtnPrint.Appearance.BackColor = System.Drawing.Color.Thistle;
+            this.BtnPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.BtnPrint.Appearance.Options.UseBackColor = true;
+            this.BtnPrint.Appearance.Options.UseFont = true;
+            this.BtnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnPrint.ImageOptions.Image")));
+            this.BtnPrint.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.BtnPrint.Location = new System.Drawing.Point(953, 585);
             this.BtnPrint.Name = "BtnPrint";
-            this.BtnPrint.Size = new System.Drawing.Size(84, 193);
-            this.BtnPrint.TabIndex = 86;
-            this.BtnPrint.Text = "Sayfalara yukarıdaki bilgileri götür";
-            this.BtnPrint.UseVisualStyleBackColor = false;
+            this.BtnPrint.Size = new System.Drawing.Size(85, 193);
+            this.BtnPrint.TabIndex = 91;
+            this.BtnPrint.Text = "Sayfalara \r\nyukarıdaki \r\nbilgileri \r\ngötür";
             this.BtnPrint.Click += new System.EventHandler(this.BtnPrint_Click);
             // 
-            // DgwStudent
+            // TxtStudentWithPenalty
             // 
-            this.DgwStudent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DgwStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgwStudent.Location = new System.Drawing.Point(53, 150);
-            this.DgwStudent.Name = "DgwStudent";
-            this.DgwStudent.ReadOnly = true;
-            this.DgwStudent.Size = new System.Drawing.Size(975, 405);
-            this.DgwStudent.TabIndex = 85;
-            this.DgwStudent.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwStudent_CellDoubleClick);
+            this.TxtStudentWithPenalty.Appearance.BackColor = System.Drawing.Color.Thistle;
+            this.TxtStudentWithPenalty.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.TxtStudentWithPenalty.Appearance.Options.UseBackColor = true;
+            this.TxtStudentWithPenalty.Appearance.Options.UseFont = true;
+            this.TxtStudentWithPenalty.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TxtStudentWithPenalty.ImageOptions.Image")));
+            this.TxtStudentWithPenalty.Location = new System.Drawing.Point(52, 25);
+            this.TxtStudentWithPenalty.Name = "TxtStudentWithPenalty";
+            this.TxtStudentWithPenalty.Size = new System.Drawing.Size(151, 90);
+            this.TxtStudentWithPenalty.TabIndex = 92;
+            this.TxtStudentWithPenalty.Text = "Cezası \r\nOlanları Getir";
+            this.TxtStudentWithPenalty.Click += new System.EventHandler(this.TxtStudentWithPenalty_Click);
             // 
-            // BtnScanStudent
+            // TxtStudentWithoutPenalty
             // 
-            this.BtnScanStudent.BackColor = System.Drawing.Color.Thistle;
-            this.BtnScanStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnScanStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BtnScanStudent.Location = new System.Drawing.Point(53, 25);
-            this.BtnScanStudent.Name = "BtnScanStudent";
-            this.BtnScanStudent.Size = new System.Drawing.Size(130, 92);
-            this.BtnScanStudent.TabIndex = 84;
-            this.BtnScanStudent.Text = "Cezası Olanları Tarat";
-            this.BtnScanStudent.UseVisualStyleBackColor = false;
-            this.BtnScanStudent.Click += new System.EventHandler(this.BtnScanStudent_Click);
-            // 
-            // BtnScanStudent2
-            // 
-            this.BtnScanStudent2.BackColor = System.Drawing.Color.Thistle;
-            this.BtnScanStudent2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnScanStudent2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BtnScanStudent2.Location = new System.Drawing.Point(232, 25);
-            this.BtnScanStudent2.Name = "BtnScanStudent2";
-            this.BtnScanStudent2.Size = new System.Drawing.Size(130, 92);
-            this.BtnScanStudent2.TabIndex = 89;
-            this.BtnScanStudent2.Text = "Cezası Olmayanları Tarat";
-            this.BtnScanStudent2.UseVisualStyleBackColor = false;
-            this.BtnScanStudent2.Click += new System.EventHandler(this.BtnScanStudent2_Click);
+            this.TxtStudentWithoutPenalty.Appearance.BackColor = System.Drawing.Color.Thistle;
+            this.TxtStudentWithoutPenalty.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.TxtStudentWithoutPenalty.Appearance.Options.UseBackColor = true;
+            this.TxtStudentWithoutPenalty.Appearance.Options.UseFont = true;
+            this.TxtStudentWithoutPenalty.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TxtStudentWithoutPenalty.ImageOptions.Image")));
+            this.TxtStudentWithoutPenalty.Location = new System.Drawing.Point(244, 25);
+            this.TxtStudentWithoutPenalty.Name = "TxtStudentWithoutPenalty";
+            this.TxtStudentWithoutPenalty.Size = new System.Drawing.Size(179, 90);
+            this.TxtStudentWithoutPenalty.TabIndex = 93;
+            this.TxtStudentWithoutPenalty.Text = "Cezası \r\nOlmayanları Getir";
+            this.TxtStudentWithoutPenalty.Click += new System.EventHandler(this.TxtStudentWithoutPenalty_Click);
             // 
             // StudentQueryByPenalty
             // 
@@ -368,12 +382,12 @@ namespace Kutuphane_Sistemi.UI.StudentQuery
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1068, 800);
             this.ControlBox = false;
-            this.Controls.Add(this.BtnScanStudent2);
+            this.Controls.Add(this.TxtStudentWithoutPenalty);
+            this.Controls.Add(this.TxtStudentWithPenalty);
+            this.Controls.Add(this.BtnPrint);
+            this.Controls.Add(this.StudentGridControl);
             this.Controls.Add(this.GrpInfo);
             this.Controls.Add(this.GrpCheckInfo);
-            this.Controls.Add(this.BtnPrint);
-            this.Controls.Add(this.DgwStudent);
-            this.Controls.Add(this.BtnScanStudent);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StudentQueryByPenalty";
             this.Text = "StudentQueryByPenalty";
@@ -381,7 +395,8 @@ namespace Kutuphane_Sistemi.UI.StudentQuery
             this.GrpInfo.PerformLayout();
             this.GrpCheckInfo.ResumeLayout(false);
             this.GrpCheckInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgwStudent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StudentGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StudentGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -411,9 +426,10 @@ namespace Kutuphane_Sistemi.UI.StudentQuery
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox GrpInfo;
         private System.Windows.Forms.GroupBox GrpCheckInfo;
-        private System.Windows.Forms.Button BtnPrint;
-        private System.Windows.Forms.DataGridView DgwStudent;
-        private System.Windows.Forms.Button BtnScanStudent;
-        private System.Windows.Forms.Button BtnScanStudent2;
+        private DevExpress.XtraGrid.GridControl StudentGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView StudentGridView;
+        private DevExpress.XtraEditors.SimpleButton BtnPrint;
+        private DevExpress.XtraEditors.SimpleButton TxtStudentWithPenalty;
+        private DevExpress.XtraEditors.SimpleButton TxtStudentWithoutPenalty;
     }
 }

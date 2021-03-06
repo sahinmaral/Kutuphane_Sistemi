@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Kutuphane_Sistemi.Properties;
 using Kutuphane_Sistemi.Models;
+using DevExpress.XtraEditors;
 
 namespace Kutuphane_Sistemi.UI.StudentQuery
 {
@@ -15,40 +16,21 @@ namespace Kutuphane_Sistemi.UI.StudentQuery
         }
 
         ConnectionClass Shortcon = new ConnectionClass();
-        ConnectionClass Join = new ConnectionClass();
+
         private void BtnScanStudent_Click(object sender, EventArgs e)
         {
             SqlConnection DbConnection = new SqlConnection(Shortcon.Address);
-
-            if (TxtScanStudentTurkishId.Text == "" )
-                MessageBox.Show("Öğrencinin TC Kimlik numarasını girmeniz gerekiyor.");
-
-            else
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("BRING_STUDENT_BYTURKISHID @STUDENTTURKISHID='" + TxtScanStudentTurkishId.Text + "'", DbConnection);
+            try
             {
-                DbConnection.Open();
-                SqlCommand sqlCommand = new SqlCommand(Join.StudentJoin + " s.st_tr_id LIKE '" + TxtScanStudentTurkishId.Text + "%'", DbConnection);
-
-                SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCommand);
-
-                DataTable dtRecord = new DataTable();
-                sqlDataAdap.Fill(dtRecord);
-                DgwStudent.DataSource = dtRecord;
-
-                DbConnection.Close();
+                DataTable dataTable = new DataTable();
+                sqlDataAdapter.Fill(dataTable);
+                StudentGridControl.DataSource = dataTable;
             }
-        }
-
-        private void DgwStudent_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int Secilen = DgwStudent.SelectedCells[0].RowIndex;
-            TxtStudentId.Text = DgwStudent.Rows[Secilen].Cells[0].Value.ToString();
-            TxtStudentName.Text = DgwStudent.Rows[Secilen].Cells[1].Value.ToString();
-            TxtStudentSurname.Text = DgwStudent.Rows[Secilen].Cells[2].Value.ToString();
-            TxtStudentTurkishId.Text = DgwStudent.Rows[Secilen].Cells[3].Value.ToString();
-            TxtStudentGender.Text = DgwStudent.Rows[Secilen].Cells[4].Value.ToString();
-            TxtStudentPenalty.Text = DgwStudent.Rows[Secilen].Cells[5].Value.ToString();
-            TxtCanTake.Text = DgwStudent.Rows[Secilen].Cells[6].Value.ToString();
-            TxtTakenBookName.Text = DgwStudent.Rows[Secilen].Cells[7].Value.ToString();
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message, "Bilgilendirme Ekranı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void BtnPrint_Click(object sender, EventArgs e)
@@ -57,6 +39,22 @@ namespace Kutuphane_Sistemi.UI.StudentQuery
             Student.StudentName = TxtStudentName.Text;
             Student.StudentSurname = TxtStudentSurname.Text;
             Student.StudentTurkishId = TxtStudentTurkishId.Text;
+        }
+
+        private void StudentGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            DataRow dataRow = StudentGridView.GetFocusedDataRow();
+            if (dataRow != null)
+            {
+                TxtStudentId.Text = dataRow[0].ToString();
+                TxtStudentName.Text = dataRow[1].ToString();
+                TxtStudentSurname.Text = dataRow[2].ToString();
+                TxtStudentTurkishId.Text = dataRow[3].ToString();
+                TxtStudentGender.Text = dataRow[4].ToString();
+                TxtStudentPenalty.Text = dataRow[5].ToString();
+                TxtCanTake.Text = dataRow[6].ToString();
+                TxtTakenBookName.Text = dataRow[7].ToString();
+            }
         }
     }
 }

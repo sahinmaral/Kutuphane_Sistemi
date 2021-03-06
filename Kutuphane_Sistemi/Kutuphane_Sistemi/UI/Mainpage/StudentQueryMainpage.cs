@@ -30,51 +30,6 @@ namespace Kutuphane_Sistemi.UI
             form.Show();
         }
 
-        private void btn_student_n_s_MouseEnter(object sender, EventArgs e)
-        {
-            BtnScanByNameSurname.FlatAppearance.BorderSize = 1;
-            BtnScanByNameSurname.FlatAppearance.BorderColor = Color.Red;
-        }
-        private void btn_student_n_s_MouseLeave(object sender, EventArgs e)
-        {
-            BtnScanByNameSurname.FlatAppearance.BorderSize = 1;
-            BtnScanByNameSurname.FlatAppearance.BorderColor = Color.Black;
-        }
-        private void btn_tr_id_MouseEnter(object sender, EventArgs e)
-        {
-            BtnScanByTurkishId.FlatAppearance.BorderSize = 1;
-            BtnScanByTurkishId.FlatAppearance.BorderColor = Color.Red;
-        }
-        private void btn_tr_id_MouseLeave(object sender, EventArgs e)
-        {
-            BtnScanByTurkishId.FlatAppearance.BorderSize = 1;
-            BtnScanByTurkishId.FlatAppearance.BorderColor = Color.Black;
-        }
-        private void btn_penalty_MouseEnter(object sender, EventArgs e)
-        {
-            BtnScanByPenalty.FlatAppearance.BorderSize = 1;
-            BtnScanByPenalty.FlatAppearance.BorderColor = Color.Red;
-        }
-        private void btn_penalty_MouseLeave(object sender, EventArgs e)
-        {
-            BtnScanByPenalty.FlatAppearance.BorderSize = 1;
-            BtnScanByPenalty.FlatAppearance.BorderColor = Color.Black;
-        }
-        private void btn_book_MouseEnter(object sender, EventArgs e)
-        {
-            BtnScanByTakenBook.FlatAppearance.BorderSize = 1;
-            BtnScanByTakenBook.FlatAppearance.BorderColor = Color.Red;
-        }
-        private void btn_book_MouseLeave(object sender, EventArgs e)
-        {
-            BtnScanByTakenBook.FlatAppearance.BorderSize = 1;
-            BtnScanByTakenBook.FlatAppearance.BorderColor = Color.Black;
-        }
-        private void btn_student_n_s_Click(object sender, EventArgs e)
-        {
-            FormShow(new StudentQueryByNameSurname());
-        }
-
         private void BtnScanByTurkishId_Click(object sender, EventArgs e)
         {
             FormShow(new StudentQueryByTurkishId());
@@ -88,6 +43,59 @@ namespace Kutuphane_Sistemi.UI
         private void BtnScanByTakenBook_Click(object sender, EventArgs e)
         {
             FormShow(new StudentQueryByTakenBook());
+        }
+
+        private void BtnScanByNameSurname_Click(object sender, EventArgs e)
+        {
+            FormShow(new StudentQueryByNameSurname());
+        }
+
+        private void BtnScanByNameSurname_MouseLeave(object sender, EventArgs e)
+        {
+            BtnScanByNameSurname.FlatAppearance.BorderSize = 1;
+            BtnScanByNameSurname.FlatAppearance.BorderColor = Color.Black;
+        }
+
+        private void BtnScanByNameSurname_MouseEnter(object sender, EventArgs e)
+        {
+            BtnScanByNameSurname.FlatAppearance.BorderSize = 1;
+            BtnScanByNameSurname.FlatAppearance.BorderColor = Color.Red;
+        }
+
+        private void BtnScanByTurkishId_MouseEnter(object sender, EventArgs e)
+        {
+            BtnScanByTurkishId.FlatAppearance.BorderSize = 1;
+            BtnScanByTurkishId.FlatAppearance.BorderColor = Color.Red;
+        }
+
+        private void BtnScanByTurkishId_MouseLeave(object sender, EventArgs e)
+        {
+            BtnScanByTurkishId.FlatAppearance.BorderSize = 1;
+            BtnScanByTurkishId.FlatAppearance.BorderColor = Color.Black;
+        }
+
+        private void BtnScanByPenalty_MouseEnter(object sender, EventArgs e)
+        {
+            BtnScanByPenalty.FlatAppearance.BorderSize = 1;
+            BtnScanByPenalty.FlatAppearance.BorderColor = Color.Red;
+        }
+
+        private void BtnScanByPenalty_MouseLeave(object sender, EventArgs e)
+        {
+            BtnScanByPenalty.FlatAppearance.BorderSize = 1;
+            BtnScanByPenalty.FlatAppearance.BorderColor = Color.Black;
+        }
+
+        private void BtnScanByTakenBook_MouseLeave(object sender, EventArgs e)
+        {
+            BtnScanByTakenBook.FlatAppearance.BorderSize = 1;
+            BtnScanByTakenBook.FlatAppearance.BorderColor = Color.Black;
+        }
+
+        private void BtnScanByTakenBook_MouseEnter(object sender, EventArgs e)
+        {
+            BtnScanByTakenBook.FlatAppearance.BorderSize = 1;
+            BtnScanByTakenBook.FlatAppearance.BorderColor = Color.Red;
         }
     }
 }

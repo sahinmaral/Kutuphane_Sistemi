@@ -88,6 +88,7 @@
             this.BtnLogin.Size = new System.Drawing.Size(127, 43);
             this.BtnLogin.TabIndex = 6;
             this.BtnLogin.Text = "Giriş yap";
+            this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
             // Login
             // 

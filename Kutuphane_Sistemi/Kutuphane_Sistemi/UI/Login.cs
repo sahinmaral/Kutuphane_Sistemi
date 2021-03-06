@@ -15,15 +15,15 @@ namespace Kutuphane_Sistemi.UI
         }
 
         ConnectionClass Shortcon = new ConnectionClass();
-       
-        private void btn_login_Click(object sender, EventArgs e)
+
+        private void BtnLogin_Click(object sender, EventArgs e)
         {
             SqlConnection DbConnection = new SqlConnection(Shortcon.Address);
 
             DbConnection.Open();
-            SqlCommand sqlCommand = new SqlCommand("CHECKADMIN", DbConnection);
+            SqlCommand sqlCommand = new SqlCommand("CHECK_ADMIN", DbConnection);
             sqlCommand.Parameters.AddWithValue("@USERNAME", TxtUsername.Text);
-            sqlCommand.Parameters.AddWithValue("@PASSWORD", TxtPassword.Text);         
+            sqlCommand.Parameters.AddWithValue("@PASSWORD", TxtPassword.Text);
             sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
             try
             {
@@ -38,16 +38,16 @@ namespace Kutuphane_Sistemi.UI
 
                 else
                 {
-                    XtraMessageBox.Show("Kullanıcı adınızı veya şifrenizi kontrol ediniz", "Bilgilendirme Ekranı",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    XtraMessageBox.Show("Kullanıcı adınızı veya şifrenizi kontrol ediniz", "Bilgilendirme Ekranı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                XtraMessageBox.Show(ex.Message,"Bilgilendirme Ekranı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show(ex.Message, "Bilgilendirme Ekranı", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            
-            
+
+
 
             DbConnection.Close();
         }
