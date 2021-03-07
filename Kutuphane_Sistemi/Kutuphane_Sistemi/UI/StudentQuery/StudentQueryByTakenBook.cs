@@ -24,6 +24,7 @@ namespace Kutuphane_Sistemi.UI.StudentQuery
             {
                 DataTable dataTable = new DataTable();
                 sqlDataAdapter.Fill(dataTable);
+
                 StudentGridControl.DataSource = dataTable;
             }
             catch (Exception ex)

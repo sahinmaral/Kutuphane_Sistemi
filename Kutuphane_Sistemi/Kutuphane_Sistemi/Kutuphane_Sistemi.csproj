@@ -58,7 +58,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Gadgets\Button_WOC.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\ConnectionClass.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

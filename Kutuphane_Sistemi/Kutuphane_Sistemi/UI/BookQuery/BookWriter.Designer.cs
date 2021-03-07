@@ -28,80 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BtnScanWriterBook = new System.Windows.Forms.Button();
-            this.DgwWriter = new System.Windows.Forms.DataGridView();
-            this.BtnScanWriter = new System.Windows.Forms.Button();
-            this.TxTScanWriter = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookWriter));
             this.label1 = new System.Windows.Forms.Label();
             this.GrpOrderBook = new System.Windows.Forms.GroupBox();
+            this.BtnDeleteOrderBook = new DevExpress.XtraEditors.SimpleButton();
+            this.BtnOrderBook = new DevExpress.XtraEditors.SimpleButton();
+            this.BtnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.TxtBookISBN = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.BtnRefresh = new System.Windows.Forms.Button();
             this.TxtStudentSurname = new System.Windows.Forms.TextBox();
             this.TxtStudentName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.DtNow = new System.Windows.Forms.DateTimePicker();
-            this.BtnDeleteOrderBook = new System.Windows.Forms.Button();
             this.TxTBookName = new System.Windows.Forms.TextBox();
             this.TxtStudentTurkishId = new System.Windows.Forms.TextBox();
-            this.BtnOrderBook = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.DgwBook = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.DgwWriter)).BeginInit();
+            this.BtnScanWriterBook = new DevExpress.XtraEditors.SimpleButton();
+            this.WriterGridControl = new DevExpress.XtraGrid.GridControl();
+            this.WriterGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.SearchLookupEditScanWriter = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.GrpOrderBook.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgwBook)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WriterGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WriterGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchLookupEditScanWriter.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
-            // 
-            // BtnScanWriterBook
-            // 
-            this.BtnScanWriterBook.BackColor = System.Drawing.Color.Thistle;
-            this.BtnScanWriterBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnScanWriterBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BtnScanWriterBook.Location = new System.Drawing.Point(363, 45);
-            this.BtnScanWriterBook.Name = "BtnScanWriterBook";
-            this.BtnScanWriterBook.Size = new System.Drawing.Size(133, 29);
-            this.BtnScanWriterBook.TabIndex = 2;
-            this.BtnScanWriterBook.Text = "Kitaplarını Tarat";
-            this.BtnScanWriterBook.UseVisualStyleBackColor = false;
-            this.BtnScanWriterBook.Visible = false;
-            this.BtnScanWriterBook.Click += new System.EventHandler(this.BtnScanWriterBook_Click);
-            // 
-            // DgwWriter
-            // 
-            this.DgwWriter.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DgwWriter.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.DgwWriter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgwWriter.Location = new System.Drawing.Point(16, 82);
-            this.DgwWriter.Name = "DgwWriter";
-            this.DgwWriter.ReadOnly = true;
-            this.DgwWriter.RowHeadersWidth = 51;
-            this.DgwWriter.Size = new System.Drawing.Size(1224, 312);
-            this.DgwWriter.TabIndex = 33;
-            this.DgwWriter.Visible = false;
-            this.DgwWriter.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwWriter_CellDoubleClick);
-            // 
-            // BtnScanWriter
-            // 
-            this.BtnScanWriter.BackColor = System.Drawing.Color.Thistle;
-            this.BtnScanWriter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnScanWriter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BtnScanWriter.Location = new System.Drawing.Point(239, 45);
-            this.BtnScanWriter.Name = "BtnScanWriter";
-            this.BtnScanWriter.Size = new System.Drawing.Size(102, 29);
-            this.BtnScanWriter.TabIndex = 1;
-            this.BtnScanWriter.Text = "Tarat";
-            this.BtnScanWriter.UseVisualStyleBackColor = false;
-            this.BtnScanWriter.Click += new System.EventHandler(this.BtnScanWriter_Click);
-            // 
-            // TxTScanWriter
-            // 
-            this.TxTScanWriter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TxTScanWriter.Location = new System.Drawing.Point(239, 12);
-            this.TxTScanWriter.Name = "TxTScanWriter";
-            this.TxTScanWriter.Size = new System.Drawing.Size(258, 26);
-            this.TxTScanWriter.TabIndex = 0;
             // 
             // label1
             // 
@@ -115,26 +69,71 @@
             // 
             // GrpOrderBook
             // 
-            this.GrpOrderBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.GrpOrderBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.GrpOrderBook.Controls.Add(this.BtnDeleteOrderBook);
+            this.GrpOrderBook.Controls.Add(this.BtnOrderBook);
+            this.GrpOrderBook.Controls.Add(this.BtnRefresh);
             this.GrpOrderBook.Controls.Add(this.TxtBookISBN);
             this.GrpOrderBook.Controls.Add(this.label8);
-            this.GrpOrderBook.Controls.Add(this.BtnRefresh);
             this.GrpOrderBook.Controls.Add(this.TxtStudentSurname);
             this.GrpOrderBook.Controls.Add(this.TxtStudentName);
             this.GrpOrderBook.Controls.Add(this.label7);
             this.GrpOrderBook.Controls.Add(this.DtNow);
-            this.GrpOrderBook.Controls.Add(this.BtnDeleteOrderBook);
             this.GrpOrderBook.Controls.Add(this.TxTBookName);
             this.GrpOrderBook.Controls.Add(this.TxtStudentTurkishId);
-            this.GrpOrderBook.Controls.Add(this.BtnOrderBook);
             this.GrpOrderBook.Controls.Add(this.label4);
             this.GrpOrderBook.Controls.Add(this.label3);
             this.GrpOrderBook.Controls.Add(this.label2);
-            this.GrpOrderBook.Location = new System.Drawing.Point(16, 845);
+            this.GrpOrderBook.Location = new System.Drawing.Point(311, 599);
             this.GrpOrderBook.Name = "GrpOrderBook";
-            this.GrpOrderBook.Size = new System.Drawing.Size(646, 233);
+            this.GrpOrderBook.Size = new System.Drawing.Size(689, 233);
             this.GrpOrderBook.TabIndex = 36;
             this.GrpOrderBook.TabStop = false;
+            // 
+            // BtnDeleteOrderBook
+            // 
+            this.BtnDeleteOrderBook.Appearance.BackColor = System.Drawing.Color.Thistle;
+            this.BtnDeleteOrderBook.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.BtnDeleteOrderBook.Appearance.Options.UseBackColor = true;
+            this.BtnDeleteOrderBook.Appearance.Options.UseFont = true;
+            this.BtnDeleteOrderBook.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnDeleteOrderBook.ImageOptions.Image")));
+            this.BtnDeleteOrderBook.Location = new System.Drawing.Point(510, 91);
+            this.BtnDeleteOrderBook.Name = "BtnDeleteOrderBook";
+            this.BtnDeleteOrderBook.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.BtnDeleteOrderBook.Size = new System.Drawing.Size(176, 47);
+            this.BtnDeleteOrderBook.TabIndex = 100;
+            this.BtnDeleteOrderBook.Text = "Kitabı\r\n iade et";
+            this.BtnDeleteOrderBook.Click += new System.EventHandler(this.BtnDeleteOrderBook_Click);
+            // 
+            // BtnOrderBook
+            // 
+            this.BtnOrderBook.Appearance.BackColor = System.Drawing.Color.Thistle;
+            this.BtnOrderBook.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.BtnOrderBook.Appearance.Options.UseBackColor = true;
+            this.BtnOrderBook.Appearance.Options.UseFont = true;
+            this.BtnOrderBook.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnOrderBook.ImageOptions.Image")));
+            this.BtnOrderBook.Location = new System.Drawing.Point(510, 22);
+            this.BtnOrderBook.Name = "BtnOrderBook";
+            this.BtnOrderBook.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.BtnOrderBook.Size = new System.Drawing.Size(176, 47);
+            this.BtnOrderBook.TabIndex = 99;
+            this.BtnOrderBook.Text = "Kitabı al";
+            this.BtnOrderBook.Click += new System.EventHandler(this.BtnOrderBook_Click);
+            // 
+            // BtnRefresh
+            // 
+            this.BtnRefresh.Appearance.BackColor = System.Drawing.Color.Thistle;
+            this.BtnRefresh.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.BtnRefresh.Appearance.Options.UseBackColor = true;
+            this.BtnRefresh.Appearance.Options.UseFont = true;
+            this.BtnRefresh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("BtnRefresh.ImageOptions.SvgImage")));
+            this.BtnRefresh.Location = new System.Drawing.Point(510, 166);
+            this.BtnRefresh.Name = "BtnRefresh";
+            this.BtnRefresh.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.BtnRefresh.Size = new System.Drawing.Size(176, 46);
+            this.BtnRefresh.TabIndex = 99;
+            this.BtnRefresh.Text = "Öğrenci \r\nbilgilerini getir";
+            this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
             // TxtBookISBN
             // 
@@ -154,20 +153,6 @@
             this.label8.Size = new System.Drawing.Size(79, 20);
             this.label8.TabIndex = 65;
             this.label8.Text = "ISBN No :";
-            // 
-            // BtnRefresh
-            // 
-            this.BtnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.BtnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BtnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.BtnRefresh.Image = global::Kutuphane_Sistemi.Properties.Resources.refresh;
-            this.BtnRefresh.Location = new System.Drawing.Point(510, 182);
-            this.BtnRefresh.Name = "BtnRefresh";
-            this.BtnRefresh.Size = new System.Drawing.Size(115, 30);
-            this.BtnRefresh.TabIndex = 64;
-            this.BtnRefresh.UseVisualStyleBackColor = false;
-            this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
             // TxtStudentSurname
             // 
@@ -205,19 +190,6 @@
             this.DtNow.Size = new System.Drawing.Size(278, 26);
             this.DtNow.TabIndex = 56;
             // 
-            // BtnDeleteOrderBook
-            // 
-            this.BtnDeleteOrderBook.BackColor = System.Drawing.Color.Thistle;
-            this.BtnDeleteOrderBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnDeleteOrderBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BtnDeleteOrderBook.Location = new System.Drawing.Point(510, 95);
-            this.BtnDeleteOrderBook.Name = "BtnDeleteOrderBook";
-            this.BtnDeleteOrderBook.Size = new System.Drawing.Size(115, 40);
-            this.BtnDeleteOrderBook.TabIndex = 59;
-            this.BtnDeleteOrderBook.Text = "Kitabı iade et";
-            this.BtnDeleteOrderBook.UseVisualStyleBackColor = false;
-            this.BtnDeleteOrderBook.Click += new System.EventHandler(this.BtnDeleteOrderBook_Click);
-            // 
             // TxTBookName
             // 
             this.TxTBookName.Enabled = false;
@@ -234,19 +206,6 @@
             this.TxtStudentTurkishId.Name = "TxtStudentTurkishId";
             this.TxtStudentTurkishId.Size = new System.Drawing.Size(278, 26);
             this.TxtStudentTurkishId.TabIndex = 54;
-            // 
-            // BtnOrderBook
-            // 
-            this.BtnOrderBook.BackColor = System.Drawing.Color.Thistle;
-            this.BtnOrderBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnOrderBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BtnOrderBook.Location = new System.Drawing.Point(510, 19);
-            this.BtnOrderBook.Name = "BtnOrderBook";
-            this.BtnOrderBook.Size = new System.Drawing.Size(115, 40);
-            this.BtnOrderBook.TabIndex = 58;
-            this.BtnOrderBook.Text = "Kitabı al";
-            this.BtnOrderBook.UseVisualStyleBackColor = false;
-            this.BtnOrderBook.Click += new System.EventHandler(this.BtnOrderBook_Click);
             // 
             // label4
             // 
@@ -278,68 +237,117 @@
             this.label2.TabIndex = 60;
             this.label2.Text = "Öğrenci kimlik no : ";
             // 
-            // DgwBook
+            // BtnScanWriterBook
             // 
-            this.DgwBook.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DgwBook.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.DgwBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgwBook.Location = new System.Drawing.Point(16, 402);
-            this.DgwBook.Name = "DgwBook";
-            this.DgwBook.ReadOnly = true;
-            this.DgwBook.RowHeadersWidth = 51;
-            this.DgwBook.Size = new System.Drawing.Size(1224, 424);
-            this.DgwBook.TabIndex = 34;
-            this.DgwBook.Visible = false;
-            this.DgwBook.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwBook_CellDoubleClick);
+            this.BtnScanWriterBook.Appearance.BackColor = System.Drawing.Color.Thistle;
+            this.BtnScanWriterBook.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.BtnScanWriterBook.Appearance.Options.UseBackColor = true;
+            this.BtnScanWriterBook.Appearance.Options.UseFont = true;
+            this.BtnScanWriterBook.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnScanWriterBook.ImageOptions.Image")));
+            this.BtnScanWriterBook.Location = new System.Drawing.Point(528, 12);
+            this.BtnScanWriterBook.Name = "BtnScanWriterBook";
+            this.BtnScanWriterBook.Size = new System.Drawing.Size(144, 54);
+            this.BtnScanWriterBook.TabIndex = 94;
+            this.BtnScanWriterBook.Text = "Kitapları Tarat";
+            this.BtnScanWriterBook.Click += new System.EventHandler(this.BtnScanWriterBook_Click);
+            // 
+            // WriterGridControl
+            // 
+            this.WriterGridControl.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WriterGridControl.Location = new System.Drawing.Point(18, 110);
+            this.WriterGridControl.MainView = this.WriterGridView;
+            this.WriterGridControl.Name = "WriterGridControl";
+            this.WriterGridControl.Size = new System.Drawing.Size(1230, 459);
+            this.WriterGridControl.TabIndex = 95;
+            this.WriterGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.WriterGridView});
+            // 
+            // WriterGridView
+            // 
+            this.WriterGridView.Appearance.FocusedCell.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.WriterGridView.Appearance.FocusedCell.Options.UseFont = true;
+            this.WriterGridView.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.WriterGridView.Appearance.HeaderPanel.Options.UseFont = true;
+            this.WriterGridView.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.WriterGridView.Appearance.Row.Options.UseFont = true;
+            this.WriterGridView.GridControl = this.WriterGridControl;
+            this.WriterGridView.Name = "WriterGridView";
+            this.WriterGridView.OptionsBehavior.ReadOnly = true;
+            this.WriterGridView.OptionsCustomization.AllowColumnMoving = false;
+            this.WriterGridView.OptionsCustomization.AllowColumnResizing = false;
+            this.WriterGridView.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.WriterGridView.OptionsView.ShowGroupPanel = false;
+            this.WriterGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.WriterGridView_FocusedRowChanged);
+            // 
+            // SearchLookupEditScanWriter
+            // 
+            this.SearchLookupEditScanWriter.EditValue = "";
+            this.SearchLookupEditScanWriter.Location = new System.Drawing.Point(235, 14);
+            this.SearchLookupEditScanWriter.Name = "SearchLookupEditScanWriter";
+            this.SearchLookupEditScanWriter.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.SearchLookupEditScanWriter.Properties.Appearance.Options.UseFont = true;
+            this.SearchLookupEditScanWriter.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.SearchLookupEditScanWriter.Properties.NullText = "";
+            this.SearchLookupEditScanWriter.Properties.PopupView = this.searchLookUpEdit1View;
+            this.SearchLookupEditScanWriter.Size = new System.Drawing.Size(278, 26);
+            this.SearchLookupEditScanWriter.TabIndex = 98;
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
             // BookWriter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1260, 1100);
+            this.ClientSize = new System.Drawing.Size(1260, 844);
             this.ControlBox = false;
-            this.Controls.Add(this.GrpOrderBook);
+            this.Controls.Add(this.SearchLookupEditScanWriter);
+            this.Controls.Add(this.WriterGridControl);
             this.Controls.Add(this.BtnScanWriterBook);
-            this.Controls.Add(this.DgwBook);
-            this.Controls.Add(this.DgwWriter);
-            this.Controls.Add(this.BtnScanWriter);
-            this.Controls.Add(this.TxTScanWriter);
+            this.Controls.Add(this.GrpOrderBook);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BookWriter";
             this.Text = "Book";
-            ((System.ComponentModel.ISupportInitialize)(this.DgwWriter)).EndInit();
+            this.Load += new System.EventHandler(this.BookWriter_Load);
             this.GrpOrderBook.ResumeLayout(false);
             this.GrpOrderBook.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgwBook)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WriterGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WriterGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchLookupEditScanWriter.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button BtnScanWriterBook;
-        private System.Windows.Forms.DataGridView DgwWriter;
-        private System.Windows.Forms.Button BtnScanWriter;
-        private System.Windows.Forms.TextBox TxTScanWriter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox GrpOrderBook;
         private System.Windows.Forms.TextBox TxtStudentSurname;
         private System.Windows.Forms.TextBox TxtStudentName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker DtNow;
-        private System.Windows.Forms.Button BtnDeleteOrderBook;
         private System.Windows.Forms.TextBox TxTBookName;
         private System.Windows.Forms.TextBox TxtStudentTurkishId;
-        private System.Windows.Forms.Button BtnOrderBook;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button BtnRefresh;
-        private System.Windows.Forms.DataGridView DgwBook;
         private System.Windows.Forms.TextBox TxtBookISBN;
         private System.Windows.Forms.Label label8;
+        private DevExpress.XtraEditors.SimpleButton BtnScanWriterBook;
+        private DevExpress.XtraGrid.GridControl WriterGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView WriterGridView;
+        private DevExpress.XtraEditors.SearchLookUpEdit SearchLookupEditScanWriter;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private DevExpress.XtraEditors.SimpleButton BtnRefresh;
+        private DevExpress.XtraEditors.SimpleButton BtnDeleteOrderBook;
+        private DevExpress.XtraEditors.SimpleButton BtnOrderBook;
     }
 }
