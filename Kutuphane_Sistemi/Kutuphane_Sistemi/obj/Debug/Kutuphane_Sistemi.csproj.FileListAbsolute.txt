@@ -66,11 +66,6 @@ C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_S
 C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.BookWriter.resources
 C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.Login.resources
 C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.Mainpage.resources
-C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.Student_Query.StudentQueryByNameSurname.resources
-C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.StudentQueryMainpage.resources
-C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.StudentQuery.StudentQueryByPenalty.resources
-C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.StudentQuery.StudentQueryByTakenBook.resources
-C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.StudentQuery.StudentQueryByTurkishId.resources
 C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.csproj.GenerateResource.cache
 C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.exe.licenses
 C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.csproj.CoreCompileInputs.cache
@@ -159,7 +154,11 @@ C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_S
 C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\bin\Debug\es\DevExpress.Office.v20.2.Core.resources.dll
 C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\bin\Debug\ja\DevExpress.Office.v20.2.Core.resources.dll
 C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\bin\Debug\ru\DevExpress.Office.v20.2.Core.resources.dll
-C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.csprojAssemblyReference.cache
 C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.csproj.CopyComplete
 C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.exe
 C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.pdb
+C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.PersonQueryMainpage.resources
+C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.Person_Query.PersonQueryByNameSurname.resources
+C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.Person_Query.PersonQueryByPenalty.resources
+C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.Person_Query.PersonQueryByTakenBook.resources
+C:\Users\sahin\Desktop\TotalFiles\KutuphaneSistemi\Kutuphane_Sistemi\Kutuphane_Sistemi\obj\Debug\Kutuphane_Sistemi.UI.Person_Query.PersonQueryByTurkishId.resources

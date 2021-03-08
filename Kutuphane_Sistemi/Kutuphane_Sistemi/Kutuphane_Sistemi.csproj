@@ -58,7 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Properties\ConnectionClass.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -85,40 +85,41 @@
     <Compile Include="UI\Mainpage\Mainpage.Designer.cs">
       <DependentUpon>Mainpage.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\StudentQuery\StudentQueryByNameSurname.cs">
+    <Compile Include="UI\PersonQuery\PersonQueryByNameSurname.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\StudentQuery\StudentQueryByNameSurname.Designer.cs">
-      <DependentUpon>StudentQueryByNameSurname.cs</DependentUpon>
+    <Compile Include="UI\PersonQuery\PersonQueryByNameSurname.Designer.cs">
+      <DependentUpon>PersonQueryByNameSurname.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Mainpage\StudentQueryMainpage.cs">
+    <Compile Include="UI\Mainpage\PersonQueryMainpage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Mainpage\StudentQueryMainpage.Designer.cs">
-      <DependentUpon>StudentQueryMainpage.cs</DependentUpon>
+    <Compile Include="UI\Mainpage\PersonQueryMainpage.Designer.cs">
+      <DependentUpon>PersonQueryMainpage.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\StudentQuery\StudentQueryByPenalty.cs">
+    <Compile Include="UI\PersonQuery\PersonQueryByPenalty.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\StudentQuery\StudentQueryByPenalty.Designer.cs">
-      <DependentUpon>StudentQueryByPenalty.cs</DependentUpon>
+    <Compile Include="UI\PersonQuery\PersonQueryByPenalty.Designer.cs">
+      <DependentUpon>PersonQueryByPenalty.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\StudentQuery\StudentQueryByTakenBook.cs">
+    <Compile Include="UI\PersonQuery\PersonQueryByTakenBook.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\StudentQuery\StudentQueryByTakenBook.Designer.cs">
-      <DependentUpon>StudentQueryByTakenBook.cs</DependentUpon>
+    <Compile Include="UI\PersonQuery\PersonQueryByTakenBook.Designer.cs">
+      <DependentUpon>PersonQueryByTakenBook.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\StudentQuery\StudentQueryByTurkishId.cs">
+    <Compile Include="UI\PersonQuery\PersonQueryByTurkishId.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\StudentQuery\StudentQueryByTurkishId.Designer.cs">
-      <DependentUpon>StudentQueryByTurkishId.cs</DependentUpon>
+    <Compile Include="UI\PersonQuery\PersonQueryByTurkishId.Designer.cs">
+      <DependentUpon>PersonQueryByTurkishId.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\BookQuery\BookWriter.resx">
       <DependentUpon>BookWriter.cs</DependentUpon>
@@ -129,20 +130,20 @@
     <EmbeddedResource Include="UI\Mainpage\Mainpage.resx">
       <DependentUpon>Mainpage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\StudentQuery\StudentQueryByNameSurname.resx">
-      <DependentUpon>StudentQueryByNameSurname.cs</DependentUpon>
+    <EmbeddedResource Include="UI\PersonQuery\PersonQueryByNameSurname.resx">
+      <DependentUpon>PersonQueryByNameSurname.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Mainpage\StudentQueryMainpage.resx">
-      <DependentUpon>StudentQueryMainpage.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Mainpage\PersonQueryMainpage.resx">
+      <DependentUpon>PersonQueryMainpage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\StudentQuery\StudentQueryByPenalty.resx">
-      <DependentUpon>StudentQueryByPenalty.cs</DependentUpon>
+    <EmbeddedResource Include="UI\PersonQuery\PersonQueryByPenalty.resx">
+      <DependentUpon>PersonQueryByPenalty.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\StudentQuery\StudentQueryByTakenBook.resx">
-      <DependentUpon>StudentQueryByTakenBook.cs</DependentUpon>
+    <EmbeddedResource Include="UI\PersonQuery\PersonQueryByTakenBook.resx">
+      <DependentUpon>PersonQueryByTakenBook.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\StudentQuery\StudentQueryByTurkishId.resx">
-      <DependentUpon>StudentQueryByTurkishId.cs</DependentUpon>
+    <EmbeddedResource Include="UI\PersonQuery\PersonQueryByTurkishId.resx">
+      <DependentUpon>PersonQueryByTurkishId.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

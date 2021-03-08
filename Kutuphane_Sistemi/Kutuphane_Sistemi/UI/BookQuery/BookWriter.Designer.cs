@@ -36,12 +36,12 @@
             this.BtnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.TxtBookISBN = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.TxtStudentSurname = new System.Windows.Forms.TextBox();
-            this.TxtStudentName = new System.Windows.Forms.TextBox();
+            this.TxtPersonSurname = new System.Windows.Forms.TextBox();
+            this.TxtPersonName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.DtNow = new System.Windows.Forms.DateTimePicker();
             this.TxTBookName = new System.Windows.Forms.TextBox();
-            this.TxtStudentTurkishId = new System.Windows.Forms.TextBox();
+            this.TxtPersonTurkishId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -75,12 +75,12 @@
             this.GrpOrderBook.Controls.Add(this.BtnRefresh);
             this.GrpOrderBook.Controls.Add(this.TxtBookISBN);
             this.GrpOrderBook.Controls.Add(this.label8);
-            this.GrpOrderBook.Controls.Add(this.TxtStudentSurname);
-            this.GrpOrderBook.Controls.Add(this.TxtStudentName);
+            this.GrpOrderBook.Controls.Add(this.TxtPersonSurname);
+            this.GrpOrderBook.Controls.Add(this.TxtPersonName);
             this.GrpOrderBook.Controls.Add(this.label7);
             this.GrpOrderBook.Controls.Add(this.DtNow);
             this.GrpOrderBook.Controls.Add(this.TxTBookName);
-            this.GrpOrderBook.Controls.Add(this.TxtStudentTurkishId);
+            this.GrpOrderBook.Controls.Add(this.TxtPersonTurkishId);
             this.GrpOrderBook.Controls.Add(this.label4);
             this.GrpOrderBook.Controls.Add(this.label3);
             this.GrpOrderBook.Controls.Add(this.label2);
@@ -132,7 +132,7 @@
             this.BtnRefresh.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.BtnRefresh.Size = new System.Drawing.Size(176, 46);
             this.BtnRefresh.TabIndex = 99;
-            this.BtnRefresh.Text = "Öğrenci \r\nbilgilerini getir";
+            this.BtnRefresh.Text = "Kişinin \r\nbilgilerini getir";
             this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
             // TxtBookISBN
@@ -154,31 +154,31 @@
             this.label8.TabIndex = 65;
             this.label8.Text = "ISBN No :";
             // 
-            // TxtStudentSurname
+            // TxtPersonSurname
             // 
-            this.TxtStudentSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TxtStudentSurname.Location = new System.Drawing.Point(353, 19);
-            this.TxtStudentSurname.Name = "TxtStudentSurname";
-            this.TxtStudentSurname.Size = new System.Drawing.Size(128, 26);
-            this.TxtStudentSurname.TabIndex = 53;
+            this.TxtPersonSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtPersonSurname.Location = new System.Drawing.Point(353, 19);
+            this.TxtPersonSurname.Name = "TxtPersonSurname";
+            this.TxtPersonSurname.Size = new System.Drawing.Size(128, 26);
+            this.TxtPersonSurname.TabIndex = 53;
             // 
-            // TxtStudentName
+            // TxtPersonName
             // 
-            this.TxtStudentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TxtStudentName.Location = new System.Drawing.Point(204, 19);
-            this.TxtStudentName.Name = "TxtStudentName";
-            this.TxtStudentName.Size = new System.Drawing.Size(144, 26);
-            this.TxtStudentName.TabIndex = 52;
+            this.TxtPersonName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtPersonName.Location = new System.Drawing.Point(204, 19);
+            this.TxtPersonName.Name = "TxtPersonName";
+            this.TxtPersonName.Size = new System.Drawing.Size(144, 26);
+            this.TxtPersonName.TabIndex = 52;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(24, 22);
+            this.label7.Location = new System.Drawing.Point(34, 22);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(154, 20);
+            this.label7.Size = new System.Drawing.Size(144, 20);
             this.label7.TabIndex = 63;
-            this.label7.Text = "Öğrenci adı , soyadı :";
+            this.label7.Text = "Kişinin adı , soyadı :";
             // 
             // DtNow
             // 
@@ -200,13 +200,13 @@
             this.TxTBookName.Size = new System.Drawing.Size(278, 26);
             this.TxTBookName.TabIndex = 55;
             // 
-            // TxtStudentTurkishId
+            // TxtPersonTurkishId
             // 
-            this.TxtStudentTurkishId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TxtStudentTurkishId.Location = new System.Drawing.Point(204, 57);
-            this.TxtStudentTurkishId.Name = "TxtStudentTurkishId";
-            this.TxtStudentTurkishId.Size = new System.Drawing.Size(278, 26);
-            this.TxtStudentTurkishId.TabIndex = 54;
+            this.TxtPersonTurkishId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtPersonTurkishId.Location = new System.Drawing.Point(204, 57);
+            this.TxtPersonTurkishId.Name = "TxtPersonTurkishId";
+            this.TxtPersonTurkishId.Size = new System.Drawing.Size(278, 26);
+            this.TxtPersonTurkishId.TabIndex = 54;
             // 
             // label4
             // 
@@ -232,11 +232,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(38, 60);
+            this.label2.Location = new System.Drawing.Point(24, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 20);
+            this.label2.Size = new System.Drawing.Size(154, 20);
             this.label2.TabIndex = 60;
-            this.label2.Text = "Öğrenci kimlik no : ";
+            this.label2.Text = "Kişinin TC kimlik no : ";
             // 
             // BtnScanWriterBook
             // 
@@ -331,12 +331,12 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox GrpOrderBook;
-        private System.Windows.Forms.TextBox TxtStudentSurname;
-        private System.Windows.Forms.TextBox TxtStudentName;
+        private System.Windows.Forms.TextBox TxtPersonSurname;
+        private System.Windows.Forms.TextBox TxtPersonName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker DtNow;
         private System.Windows.Forms.TextBox TxTBookName;
-        private System.Windows.Forms.TextBox TxtStudentTurkishId;
+        private System.Windows.Forms.TextBox TxtPersonTurkishId;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

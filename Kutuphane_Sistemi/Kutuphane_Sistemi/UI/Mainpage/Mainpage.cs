@@ -39,7 +39,7 @@ namespace Kutuphane_Sistemi.UI
 
         private void öğrenciSorgulamaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormShow(new StudentQueryMainpage());
+            FormShow(new PersonQueryMainpage());
         }
 
         private void ProgramıKapat_Click(object sender, EventArgs e)

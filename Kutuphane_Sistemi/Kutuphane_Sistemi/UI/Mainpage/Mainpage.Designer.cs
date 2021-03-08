@@ -106,8 +106,8 @@
             this.öğrenciSorgulamaToolStripMenuItem.BackColor = System.Drawing.Color.Thistle;
             this.öğrenciSorgulamaToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.öğrenciSorgulamaToolStripMenuItem.Name = "öğrenciSorgulamaToolStripMenuItem";
-            this.öğrenciSorgulamaToolStripMenuItem.Size = new System.Drawing.Size(154, 24);
-            this.öğrenciSorgulamaToolStripMenuItem.Text = "Öğrenci sorgulama";
+            this.öğrenciSorgulamaToolStripMenuItem.Size = new System.Drawing.Size(123, 24);
+            this.öğrenciSorgulamaToolStripMenuItem.Text = "Kişi sorgulama";
             this.öğrenciSorgulamaToolStripMenuItem.Click += new System.EventHandler(this.öğrenciSorgulamaToolStripMenuItem_Click);
             // 
             // MainpagePanel

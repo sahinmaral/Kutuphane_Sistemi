@@ -17,7 +17,7 @@ namespace Kutuphane_Sistemi.UI
 
         ConnectionClass Shortcon = new ConnectionClass();
         
-        string StudentId;
+        string PersonId;
         int WriterId;
         int KitapNo;
         private void BtnScanWriterBook_Click(object sender, EventArgs e)
@@ -41,10 +41,10 @@ namespace Kutuphane_Sistemi.UI
 
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
-            StudentId = Student.StudentId;
-            TxtStudentName.Text = Student.StudentName;
-            TxtStudentSurname.Text = Student.StudentSurname;
-            TxtStudentTurkishId.Text = Student.StudentTurkishId;
+            PersonId = Person.Id;
+            TxtPersonName.Text = Person.Name;
+            TxtPersonSurname.Text = Person.Surname;
+            TxtPersonTurkishId.Text = Person.TurkishId;
         }
 
 
@@ -52,10 +52,10 @@ namespace Kutuphane_Sistemi.UI
         {
             SqlConnection DbConnection = new SqlConnection(Shortcon.Address);
 
-            if (TxtStudentName.Text == "" && TxtStudentSurname.Text == "")
-                MessageBox.Show("Kitabı almak için öğrencinin adını ve soyadını yazmanız gerekir", "Bilgilendirme Ekranı");
-            else if (TxtStudentTurkishId.Text == "")
-                MessageBox.Show("Kitabı almak için öğrencinin TC kimlik numarasını yazmanız gerekir", "Bilgilendirme Ekranı");
+            if (TxtPersonName.Text == "" && TxtPersonSurname.Text == "")
+                MessageBox.Show("Kitabı almak için kişinin adını ve soyadını yazmanız gerekir", "Bilgilendirme Ekranı");
+            else if (TxtPersonTurkishId.Text == "")
+                MessageBox.Show("Kitabı almak için kişinin TC kimlik numarasını yazmanız gerekir", "Bilgilendirme Ekranı");
             else if (TxTBookName.Text == "")
                 MessageBox.Show("Kitabı tablodan işaretlemeniz gerekir", "Bilgilendirme Ekranı");
 
@@ -66,7 +66,7 @@ namespace Kutuphane_Sistemi.UI
                 try
                 {
                     SqlCommand sqlCommand = new SqlCommand("ORDER_BOOK", DbConnection);
-                    sqlCommand.Parameters.AddWithValue("@STUDENTID", StudentId);
+                    sqlCommand.Parameters.AddWithValue("@PERSONID", PersonId);
                     sqlCommand.Parameters.AddWithValue("@TAKENDATE", DtNow.Value);
                     sqlCommand.Parameters.AddWithValue("@BOOKID", KitapNo);
                     sqlCommand.CommandType = CommandType.StoredProcedure;
@@ -89,10 +89,10 @@ namespace Kutuphane_Sistemi.UI
         {
             SqlConnection DbConnection = new SqlConnection(Shortcon.Address);
 
-            if (TxtStudentName.Text == "" && TxtStudentSurname.Text == "")
-                MessageBox.Show("Kitabı almak için öğrencinin adını ve soyadını yazmanız gerekir", "Bilgilendirme Ekranı");
-            else if (TxtStudentTurkishId.Text == "")
-                MessageBox.Show("Kitabı almak için öğrencinin TC kimlik numarasını yazmanız gerekir", "Bilgilendirme Ekranı");
+            if (TxtPersonName.Text == "" && TxtPersonSurname.Text == "")
+                MessageBox.Show("Kitabı almak için kişinin adını ve soyadını yazmanız gerekir", "Bilgilendirme Ekranı");
+            else if (TxtPersonTurkishId.Text == "")
+                MessageBox.Show("Kitabı almak için kişinin TC kimlik numarasını yazmanız gerekir", "Bilgilendirme Ekranı");
             else if (TxTBookName.Text == "")
                 MessageBox.Show("Kitabı tablodan işaretlemeniz gerekir", "Bilgilendirme Ekranı");
 
@@ -100,7 +100,7 @@ namespace Kutuphane_Sistemi.UI
             try
             {
                 SqlCommand sqlCommand = new SqlCommand("APPLY_PENALTY", DbConnection);
-                sqlCommand.Parameters.AddWithValue("@P_STUDENTID", StudentId);
+                sqlCommand.Parameters.AddWithValue("@P_PERSONID", PersonId);
                 sqlCommand.Parameters.AddWithValue("@BOOKID", KitapNo);
                 sqlCommand.CommandType = CommandType.StoredProcedure;
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
@@ -133,9 +133,9 @@ namespace Kutuphane_Sistemi.UI
 
         private void WriterGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            TxtStudentName.Text = "";
-            TxtStudentSurname.Text = "";
-            TxtStudentTurkishId.Text = "";
+            TxtPersonName.Text = "";
+            TxtPersonSurname.Text = "";
+            TxtPersonTurkishId.Text = "";
 
             DataRow dataRow = WriterGridView.GetFocusedDataRow();
             if (dataRow != null)
@@ -143,10 +143,10 @@ namespace Kutuphane_Sistemi.UI
                 KitapNo = (int)dataRow[0];
                 TxtBookISBN.Text = dataRow[1].ToString();
                 TxTBookName.Text = dataRow[2].ToString();
-                StudentId = dataRow[6].ToString();
-                TxtStudentName.Text = dataRow[7].ToString();
-                TxtStudentSurname.Text = dataRow[8].ToString();
-                TxtStudentTurkishId.Text = dataRow[9].ToString();
+                PersonId = dataRow[6].ToString();
+                TxtPersonName.Text = dataRow[7].ToString();
+                TxtPersonSurname.Text = dataRow[8].ToString();
+                TxtPersonTurkishId.Text = dataRow[9].ToString();
             }
         }
 
