@@ -70,7 +70,7 @@ namespace Kutuphane_Sistemi.UI
                     sqlCommand.Parameters.AddWithValue("@TAKENDATE", DtNow.Value);
                     sqlCommand.Parameters.AddWithValue("@BOOKID", KitapNo);
                     sqlCommand.CommandType = CommandType.StoredProcedure;
-                    SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                   SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
                     
                 }
                 catch (Exception ex)
@@ -87,8 +87,29 @@ namespace Kutuphane_Sistemi.UI
 
         private void BtnDeleteOrderBook_Click(object sender, EventArgs e)
         {
-            
+            SqlConnection DbConnection = new SqlConnection(Shortcon.Address);
 
+            if (TxtStudentName.Text == "" && TxtStudentSurname.Text == "")
+                MessageBox.Show("Kitabı almak için öğrencinin adını ve soyadını yazmanız gerekir", "Bilgilendirme Ekranı");
+            else if (TxtStudentTurkishId.Text == "")
+                MessageBox.Show("Kitabı almak için öğrencinin TC kimlik numarasını yazmanız gerekir", "Bilgilendirme Ekranı");
+            else if (TxTBookName.Text == "")
+                MessageBox.Show("Kitabı tablodan işaretlemeniz gerekir", "Bilgilendirme Ekranı");
+
+            DbConnection.Open();
+            try
+            {
+                SqlCommand sqlCommand = new SqlCommand("APPLY_PENALTY", DbConnection);
+                sqlCommand.Parameters.AddWithValue("@P_STUDENTID", StudentId);
+                sqlCommand.Parameters.AddWithValue("@BOOKID", KitapNo);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message, "Bilgilendirme Ekranı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            DbConnection.Close();
 
 
         }

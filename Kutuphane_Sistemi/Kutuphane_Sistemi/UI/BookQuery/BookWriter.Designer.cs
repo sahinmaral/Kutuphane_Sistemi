@@ -184,6 +184,7 @@
             // 
             this.DtNow.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.DtNow.Checked = false;
+            this.DtNow.Enabled = false;
             this.DtNow.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.DtNow.Location = new System.Drawing.Point(204, 188);
             this.DtNow.Name = "DtNow";
