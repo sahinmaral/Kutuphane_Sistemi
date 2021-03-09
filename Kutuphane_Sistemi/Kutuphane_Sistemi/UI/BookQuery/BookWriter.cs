@@ -56,7 +56,7 @@ namespace Kutuphane_Sistemi.UI
                 MessageBox.Show("Kitabı almak için kişinin adını ve soyadını yazmanız gerekir", "Bilgilendirme Ekranı");
             else if (TxtPersonTurkishId.Text == "")
                 MessageBox.Show("Kitabı almak için kişinin TC kimlik numarasını yazmanız gerekir", "Bilgilendirme Ekranı");
-            else if (TxTBookName.Text == "")
+            else if (TxtBookName.Text == "")
                 MessageBox.Show("Kitabı tablodan işaretlemeniz gerekir", "Bilgilendirme Ekranı");
 
 
@@ -93,13 +93,13 @@ namespace Kutuphane_Sistemi.UI
                 MessageBox.Show("Kitabı almak için kişinin adını ve soyadını yazmanız gerekir", "Bilgilendirme Ekranı");
             else if (TxtPersonTurkishId.Text == "")
                 MessageBox.Show("Kitabı almak için kişinin TC kimlik numarasını yazmanız gerekir", "Bilgilendirme Ekranı");
-            else if (TxTBookName.Text == "")
+            else if (TxtBookName.Text == "")
                 MessageBox.Show("Kitabı tablodan işaretlemeniz gerekir", "Bilgilendirme Ekranı");
 
             DbConnection.Open();
             try
             {
-                SqlCommand sqlCommand = new SqlCommand("APPLY_PENALTY", DbConnection);
+                SqlCommand sqlCommand = new SqlCommand("DEORDER_BOOK", DbConnection);
                 sqlCommand.Parameters.AddWithValue("@P_PERSONID", PersonId);
                 sqlCommand.Parameters.AddWithValue("@BOOKID", KitapNo);
                 sqlCommand.CommandType = CommandType.StoredProcedure;
@@ -110,7 +110,7 @@ namespace Kutuphane_Sistemi.UI
                 XtraMessageBox.Show(ex.Message, "Bilgilendirme Ekranı", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             DbConnection.Close();
-
+            this.Close();
 
         }
 
@@ -142,7 +142,7 @@ namespace Kutuphane_Sistemi.UI
             {
                 KitapNo = (int)dataRow[0];
                 TxtBookISBN.Text = dataRow[1].ToString();
-                TxTBookName.Text = dataRow[2].ToString();
+                TxtBookName.Text = dataRow[2].ToString();
                 PersonId = dataRow[6].ToString();
                 TxtPersonName.Text = dataRow[7].ToString();
                 TxtPersonSurname.Text = dataRow[8].ToString();

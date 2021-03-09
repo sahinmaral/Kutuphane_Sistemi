@@ -1,8 +1,9 @@
-﻿using Kutuphane_Sistemi.Properties;
+﻿using DevExpress.XtraEditors;
+using Kutuphane_Sistemi.Properties;
 using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
+
 
 
 namespace Kutuphane_Sistemi.UI
@@ -31,7 +32,7 @@ namespace Kutuphane_Sistemi.UI
                 if (sqlDataReader.Read())
                 {
                     XtraMessageBox.Show("Hoşgeldiniz", "Bilgilendirme Ekranı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Mainpage frm = new Mainpage();
+                    Mainpage.Mainpage frm = new Mainpage.Mainpage();
                     frm.Show();
                     this.Hide();
                 }
